@@ -11,68 +11,73 @@
 <body>
     <!-- HEROIMAGE -->
     <section class="img-index">
-
+        <div>
+            <img src="img/calculator.png" alt="">
+            <img src="img/iPad.png" alt="">
+            <img src="img/Folder.png" alt="">
+        </div>
     </section>
 
     <section class="forms-section">
-        <h1 class="section-title">Animated Forms</h1>
+        <h1 class="section-title">MATHE<span>basics</span></h1>
         <div class="forms">
           <div class="form-wrapper is-active">
             <button type="button" class="switcher switcher-login">
-              Login
+              Iniciar Sesi&oacute;n
               <span class="underline"></span>
             </button>
             <form class="form form-login">
               <fieldset>
-                <legend>Please, enter your email and password for login.</legend>
+                <legend>Por favor ingresa tu correo electrónico y tu contraseña para iniciar sesión</legend>
                 <div class="input-block">
-                  <label for="login-email">E-mail</label>
+                  <label for="login-email">Correo electr&oacute;nico</label>
                   <input id="login-email" type="email" required>
                 </div>
                 <div class="input-block">
-                  <label for="login-password">Password</label>
+                  <label for="login-password">Contrase&ntilde;a</label>
                   <input id="login-password" type="password" required>
                 </div>
               </fieldset>
-              <button type="submit" class="btn-login">Login</button>
+              <button type="submit" class="btn-login">Iniciar Sesi&oacute;n</button>
             </form>
           </div>
           <div class="form-wrapper">
             <button type="button" class="switcher switcher-signup">
-              Sign Up
+              ¿Nuevo usuario?
               <span class="underline"></span>
             </button>
             <form class="form form-signup">
               <fieldset>
-                <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+                <legend>Por favor ingresa tu correo electrónico, tu contraseña y confirma tu contraseña para registrarte.</legend>
                 <div class="input-block">
-                  <label for="signup-email">E-mail</label>
+                  <label for="signup-email">Correo electr&oacute;nico</label>
                   <input id="signup-email" type="email" required>
                 </div>
                 <div class="input-block">
-                  <label for="signup-password">Password</label>
+                  <label for="signup-password">Contraseña</label>
                   <input id="signup-password" type="password" required>
                 </div>
                 <div class="input-block">
-                  <label for="signup-password-confirm">Confirm password</label>
+                  <label for="signup-password-confirm">Confirma tu contraseña</label>
                   <input id="signup-password-confirm" type="password" required>
                 </div>
               </fieldset>
-              <button type="submit" class="btn-signup">Continue</button>
+              <button type="submit" class="btn-signup">Crear cuenta</button>
             </form>
           </div>
         </div>
+        <span class="footer">Derechos Reservados 2021&reg; Team 1</span>
       </section>
 
+    <!-- TABS -->
       <script>
-          const switchers = [...document.querySelectorAll('.switcher')]
-
-switchers.forEach(item => {
-	item.addEventListener('click', function() {
-		switchers.forEach(item => item.parentElement.classList.remove('is-active'))
-		this.parentElement.classList.add('is-active')
-	})
-})
+        const switchers = [...document.querySelectorAll('.switcher')]
+        switchers.forEach(item => {
+	        item.addEventListener('click', function() {
+		    switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+		    this.parentElement.classList.add('is-active')
+	        })
+        })
       </script>
 </body>
 </html>

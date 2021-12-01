@@ -1,0 +1,63 @@
+:root {
+    --primary:  #daecfc;
+    --secondary:#b2cfeb;
+    --blue1:    #7ba0c2;
+    --blue2:    #597ba0;
+    --blue3:    #6C8EA9;
+    --blue4:    #00D0FF;
+    --blue5:    #0962FF;
+    --error:    #F0325B;
+    --warning:  #EEAF77;
+    --success:  #0E8B75;
+}
+
+/*** LOGO FONTS ***/
+@font-face {
+    font-family: RC;
+    src: url(../fonts/R&C-Demo.otf);
+}
+@font-face {
+    font-family: ZonaProBold;
+    src: url(../fonts/ZonaPro-Bold.otf);
+}
+@font-face {
+    font-family: ZonaPro;
+    src: url(../fonts/ZonaPro-ExtraLight.otf);
+}
+
+/*** TEXT/BODY FONTS ***/
+@font-face {
+    font-family: Klavika;
+    src: url(../fonts/klavika-light.otf);
+}
+@font-face {
+    font-family: Klavika-Italic;
+    src: url(../fonts/klavika-light-italic.otf);
+}
+@font-face {
+    font-family: Klavika-Medium;
+    src: url(../fonts/klavika-medium.otf);
+}
+@font-face {
+    font-family: Klavika-Medium-Italic;
+    src: url(../fonts/klavika-medium-italic.otf);
+}
+@font-face {
+    font-family: Klavika-Bold;
+    src: url(../fonts/klavika-bold.otf);
+}
+@font-face {
+    font-family: Klavika-Bold-Italic;
+    src: url(../fonts/klavika-bold-italic.otf);
+}
+
+/*** GENERAL STYLES ***/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--primary);
+    font-family: Klavika;
+}
