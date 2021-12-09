@@ -16,6 +16,9 @@
             <img src="img/iPad.png" alt="">
             <img src="img/Folder.png" alt="">
         </div>
+        <% if (message) {%> 
+          <div class="message"><%= message %></div>
+        <% } %>
     </section>
 
     <section class="forms-section">
@@ -26,19 +29,19 @@
               Iniciar Sesi&oacute;n
               <span class="underline"></span>
             </button>
-            <form class="form form-login">
+            <form class="form form-login" action="/signin" method="POST">
               <fieldset>
                 <legend>Por favor ingresa tu correo electrónico y tu contraseña para iniciar sesión</legend>
                 <div class="input-block">
                   <label for="login-email">Correo electr&oacute;nico</label>
-                  <input id="login-email" type="email" required>
+                  <input id="login-email" type="email" name="login_email" required>
                 </div>
                 <div class="input-block">
                   <label for="login-password">Contrase&ntilde;a</label>
-                  <input id="login-password" type="password" required>
+                  <input id="login-password" type="password" name="login_password" required>
                 </div>
               </fieldset>
-              <button type="submit" class="btn-login">Iniciar Sesi&oacute;n</button>
+              <button type="submit" class="btn-login" id="btn-login">Iniciar Sesi&oacute;n</button>
             </form>
           </div>
           <div class="form-wrapper">
@@ -46,23 +49,23 @@
               ¿Nuevo usuario?
               <span class="underline"></span>
             </button>
-            <form class="form form-signup">
+            <form class="form form-signup" action="/signup" method="POST">
               <fieldset>
                 <legend>Por favor ingresa tu correo electrónico, tu contraseña y confirma tu contraseña para registrarte.</legend>
                 <div class="input-block">
+                    <label for="signup-user-name">Nombre de usuario</label>
+                    <input id="signup-user-name" type="text" name="signup_user_name" required>
+                  </div>
+                <div class="input-block">
                   <label for="signup-email">Correo electr&oacute;nico</label>
-                  <input id="signup-email" type="email" required>
+                  <input id="signup-email" type="email" name="signup_email" required>
                 </div>
                 <div class="input-block">
                   <label for="signup-password">Contraseña</label>
-                  <input id="signup-password" type="password" required>
-                </div>
-                <div class="input-block">
-                  <label for="signup-password-confirm">Confirma tu contraseña</label>
-                  <input id="signup-password-confirm" type="password" required>
+                  <input id="signup-password" type="password" name="signup_password" required>
                 </div>
               </fieldset>
-              <button type="submit" class="btn-signup">Crear cuenta</button>
+              <button type="submit" class="btn-signup" id="btn-signup">Crear cuenta</button>
             </form>
           </div>
         </div>

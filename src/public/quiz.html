@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Mathebasics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/exam.css">
+    <link rel="stylesheet" href="css/font.css">
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="menu">
+        <div class="logo">
+            <p>M</p>
+            <p>b</p>
+            <span>v1.0</span>
+        </div>
+        <a href="/profile" class="user_p">
+            <div class="user_profile">
+                <img src="img/avatar_6.png" alt="">
+                <p>Alan iD</p>
+                <i class="icon icon-chevron-right"></i>
+            </div>
+        </a>
+        <ul class="options">
+            <li>
+                <a href="/home">
+                    <i class="icon icon-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/progress">
+                    <i class="icon icon-pie-chart"></i>
+                    <span>Progreso</span>
+                </a>
+            </li>
+        </ul>
+        <a href="/logout" class="logout_buttom">
+            <i class="icon icon-log-out"></i>
+            <span>Cerrar sesión</span>
+        </a>
+    </nav>
+
+    <!-- DATA DISPLAY -->
+    <main class="content">
+            <div class="container">
+                <div class="header">
+                    <h4>EXAMEN</h4>
+                    <h1>NOMBRE DE LA UNIDAD TÉMATICA</h1>
+                </div>
+                <div id="game">
+                    <div id="hub">
+                        <!-- PROGRESO -->
+                        <div class="hub-item">
+                            <div id="progressBar">
+                                <div id="progressBarFull"></div>
+                            </div>
+                            <p id="progressText" class="hub-prefix">
+                                Pregunta
+                            </p>
+                            
+                        </div>
+                        <!-- PUNTAJE -->
+                        <div class="hub-item hub-score">
+                            <p class="hub-prefix">
+                                Puntaje
+                            </p>
+                            <h1 class="hub-main-text" id="score">
+                                0
+                            </h1>
+                        </div>
+                    </div>
+                    <div id="question">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quis dolore officia consectetur exercitationem, aut illum ullam porro recusandae aperiam quidem quaerat, laudantium, reprehenderit maxime. Ratione magnam possimus eaque repudiandae.
+                    </div>
+                    <!-- PREGUNTAS -->
+                    <div class="choice-grid">
+                        <div class="choice-container">
+                            <p class="choice-prefix"><i class="icon icon-hexagon"></i></p>
+                            <p class="choice-text" data-number="1">Opción</p>
+                        </div>
+                        <div class="choice-container">
+                            <p class="choice-prefix"><i class="icon icon-hexagon"></i></p>
+                            <p class="choice-text" data-number="2">Opción</p>
+                        </div>
+                        <div class="choice-container">
+                            <p class="choice-prefix"><i class="icon icon-hexagon"></i></p>
+                            <p class="choice-text" data-number="3">Opción</p>
+                        </div>
+                        <div class="choice-container">
+                            <p class="choice-prefix"><i class="icon icon-hexagon"></i></p>
+                            <p class="choice-text" data-number="4">Opción</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <p class="course">TERCER GRADO</p>
+                    <p class="grade">Secundaria</p>
+                </div>
+                <div class="final" id="finalPage">
+                    <div>
+                        <p>P&nbsp;&nbsp;U&nbsp;&nbsp;N&nbsp;&nbsp;T&nbsp;&nbsp;A&nbsp;&nbsp;J&nbsp;&nbsp;E &nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;I&nbsp;&nbsp;N&nbsp;&nbsp;A&nbsp;&nbsp;L</p>
+                        <p id="finalScore">10</p>
+                        <div class="actions">
+                            <button id="register">Registrar Puntaje</button>
+                            <button id="reset">Reintentar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!-- EXAM SCRIPT -->
+    <script src="js/exam.js"></script>
+</body>
+</html>

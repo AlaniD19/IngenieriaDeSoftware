@@ -8,7 +8,7 @@
     --blue5:    #0962FF;
     --error:    #F0325B;
     --warning:  #EEAF77;
-    --success:  #0E8B75;
+    --success:  #11AC83;
 }
 
 /*** LOGO FONTS ***/
@@ -61,3 +61,5 @@ body{
     background-color: var(--primary);
     font-family: Klavika;
 }
+
+/*** MESSAGES ***/

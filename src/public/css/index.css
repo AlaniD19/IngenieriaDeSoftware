@@ -308,11 +308,13 @@ section {
 	transition: all .4s ease-in;
 }
 .btn-login, .btn-signup {
+	cursor: pointer;
 	color: #fbfdff;
 	background: var(--blue5);
 	transform: translateX(-30%);
 }
 .btn-signup {
+	cursor: pointer;
 	transform: translateX(30%);
 }
 

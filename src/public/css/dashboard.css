@@ -1,0 +1,134 @@
+body {
+    display: flex;
+}
+.menu {
+    display: block;
+    width: 20%;
+    height: 100vh;
+}
+.menu .logo {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    font-size: 3vw;
+    color: var(--blue5);
+}
+.menu .logo p:first-child {
+    font-family: RC;
+}
+.menu .logo p:last-child {
+    font-family: ZonaProBold;
+    font-size: 2.5vw;
+}
+.menu .logo span {
+    font-size: 0.8vw;
+}
+.menu  > a {
+    display: block;
+    margin: auto;
+    width: 90%;
+    background: var(--secondary);
+    border-radius: 1.5vw;
+    padding: 1vw 1.5vw;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.menu > a.user_p:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.menu > a.user_p:hover img {
+    transform: rotate(10deg);
+}
+.menu > a .user_profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--blue2);
+    font-size: 1vw;
+}
+.menu > a .user_profile img {
+    width: 20%;
+    transition: all 0.3s;
+}
+.menu > a .user_profile p {
+    width: 70%;
+    padding: 0 0 0 1.5vw;
+    font-family: Klavika;
+    line-height: 2vw;
+}
+.menu > a .user_profile i {
+    width: 10%;
+    font-weight: 800;
+    font-size: 1.2vw;
+}
+.menu .options {
+    display: block;
+    width: 90%;
+    margin: auto;
+    margin-top: 25%;
+    margin-bottom: 75%;
+}
+.menu .options li {
+    display: block;
+    margin: auto;
+    width: 90%;
+    border-radius: 1.5vw;
+    margin-bottom: 5%;
+    transition: all 0.3s;
+}
+.menu .options li:hover {
+    background: rgba(0,0,0,0.1);
+}
+.menu .options li a {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1vw 1.5vw;
+    font-size: 0.9vw;
+    text-decoration: none;
+    color: var(--blue5);
+}
+.menu .options li i {
+    display: block;
+    width: 15%;
+    font-weight: 800;
+}
+.menu .options li span {
+    letter-spacing: 0.05vw;
+} 
+.menu .logout_buttom {
+    border: 1px solid var(--error);
+    background: transparent;
+    color: var(--error);
+    display: flex;
+    width: 80%;
+    opacity: 0.7;
+    transition: all 0.3s;
+    font-size: 0.8vw;
+}
+.menu .logout_buttom:hover {
+    color: white;
+    opacity: 1;
+    background: var(--error);
+}
+.menu .logout_buttom i {
+    font-weight: 800;
+    width: 15%;
+}
+.menu .logout_buttom span {
+    letter-spacing: 0.05vw;
+}
+/* DATA DISPLAY */
+.content {
+    display: block;
+    width: 75%;
+    height: 90vh;
+    background: #fff;
+    margin: auto;
+    border-radius: 2vw;
+    overflow: hidden;
+}
