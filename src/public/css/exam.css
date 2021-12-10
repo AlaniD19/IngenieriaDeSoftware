@@ -69,10 +69,15 @@ main > .container #question {
     font-size: 1.5vw;
     color: #404041;
 }
+/* Agrege esto para centrar las imagenes */
+main > .container .imagen #img {
+    display: block;
+    margin: auto;
+}
 main > .container .choice-grid {
     display: flex;
     width: 100%;
-    padding: 0 5%;
+    padding: 2% 5% 5% 5%;
     justify-content: space-between;
     align-items: center;
 }
@@ -147,7 +152,7 @@ main > .container .choice-grid .choice-container .choice-text {
     color: var(--blue5);
 }
 main > .container .footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     padding: 1% 5%;
     width: 100%;
