@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Mathebasics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/topic.css">
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="menu">
+        <div class="logo">
+            <p>M</p>
+            <p>b</p>
+            <span>v1.0</span>
+        </div>
+        <a href="/profile" class="user_p">
+            <div class="user_profile">
+                <img src="img/avatar_6.png" alt="">
+                <p>Alan iD</p>
+                <i class="icon icon-chevron-right"></i>
+            </div>
+        </a>
+        <ul class="options">
+            <li>
+                <a href="/home">
+                    <i class="icon icon-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/progress">
+                    <i class="icon icon-pie-chart"></i>
+                    <span>Progreso</span>
+                </a>
+            </li>
+        </ul>
+        <a href="/logout" class="logout_buttom">
+            <i class="icon icon-log-out"></i>
+            <span>Cerrar sesión</span>
+        </a>
+    </nav>
+
+    <!-- DATA DISPLAY -->
+    <main class="content">
+        <div class="title">
+            <img src="img/bookmark-clay.png" alt="">
+            <h1>Álgebra: ecuaciones lineales</h1>
+        </div>
+        <div class="block-topic">
+            <p class="text-title">Maneras de resolver sistemas de Ecuaciones</p>
+            <p class="text-subtitle">Igualación</p>
+            <p>: Consiste en despejar una variable en la primera ecuación y en la segunda para después igualarlas.</p>
+            <p class="text-subsubtitle">Ejemplo</p>
+            <p>x-y=5</p>
+            <p>x+2y=-1</p>
+            <p>1. Aislamos una incógnita en las dos ecuaciones</p>
+            <p>Escogemos aislar la incógnita x:</p>
+            <p>x-y=5</p>
+            <p>x+2y=-1</p>
+            <p>x=5+y</p>
+            <p>x=-1-2y</p>
+            <p>2. Igualamos las expresiones</p>
+            <p>Como x=x, podemos igualar las expresiones obtenidas:</p>
+            <p>5+y=-1-2y</p>
+            <p>3. Resolvemos la ecuación</p>
+            <p>Resolvemos la ecuación de primer grado obtenida:</p>
+            <p>5+y=-1-2y</p>
+            <p>2y+y=-1-5</p>
+            <p>3y=-6</p>
+            <p>y=-6/3</p>
+            <p>y=-2</p>
+            <p>4. Calculamos la otra incógnita sustituyendo</p>
+            <p>Sustituimos el valor de la incógnita y en alguna de las expresiones calculadas anteriormente (la primera, por ejemplo):</p>
+            <p>x=5+y</p>
+            <p>x=5-2</p>
+            <p>x=3</p>
+            <p>La solución del sistema es</p>
+            <p>x=3</p>
+            <p>y=-2</p>
+            <br>
+            <p class="text-subtitle">Sustitución</p>
+            <p>En el cual se despeja una variable de la primera ecuación y se sustituye en la segunda.</p>
+            <p class="text-subsubtitle">Ejemplo</p>
+            <p>4+x=2y</p>
+            <p>2x-y=1</p>
+            <p>1. Aislamos una incógnita</p>
+            <p>Vamos a aislar la x de la primera ecuación. Como su coeficiente es 1, sólo tenemos que pasar el 4 restando al otro lado:</p>
+            <p>4+x=2y</p>
+            <p>X=2y-4</p>
+            <p>Ya tenemos aislada la incógnita x.</p>
+            <p>2. Sustituimos la incógnita en la otra ecuación</p>
+            <p>Como tenemos que la incógnita x es igual 2y-4, escribimos 2y-4 en lugar de la x en la segunda ecuación (sustituimos la x):</p>
+            <p>2x-y=1</p>
+            <p>2(2y-4)-y=1</p>
+            <p>4y-8-y=1</p>
+            <p>Observad que hemos utilizado paréntesis porque el coeficiente 2 tiene que multiplicar a todos los términos.</p>
+            <p>3. Resolvemos la ecuación obtenida:</p>
+            <p>4y-8-y=1</p>
+            <p>3y-8=1</p>
+            <p>3y=9</p>
+            <p>y=9/3=3</p>
+            <p>Ya sabemos una incógnita: y=3.</p>
+            <p>4. Calculamos la otra incógnita sustituyendo:</p>
+            <p>Al despejar la incógnita x teníamos</p>
+            <p>X=2y-4</p>
+            <p>Como conocemos y=3, sustituimos en la ecuación:</p>
+            <p>X=2y-4</p>
+            <p>X=2*3 -4</p>
+            <p>X=6-4=2</p>
+            <p>Por tanto, la otra incógnita es x=2.</p>
+            <p>La solución del sistema es</p>
+            <p>x=2</p>
+            <p>y=3</p>
+            <br> 
+            <p class="text-subtitle">Suma-Resta</p>
+            <p>Consiste en multiplicar una de las dos ecuaciones por algún número para que al sumar o restar las dos ecuaciones se cancele una variable.</p>
+            <p class="text-subsubtitle">Ejemplo</p>
+            <p>x-y=2</p>
+            <p>2x+y=19</p>
+            <p>1. Comprobamos los coeficientes</p>
+            <p>Hay que asegurarse de que al sumar o restar las ecuaciones, alguna de las incógnitas desaparece:</p>
+            <p>Escogemos una incógnita a eliminar: la y.</p>
+            <p>Sus coeficientes son -1 (en la primera) y 1 (en la segunda).</p>
+            <p>Como son iguales y de signo contrario, sumaremos las ecuaciones.</p>
+            <p>Nota: si ninguna de las incógnitas tiene el mismo coeficiente, podemos multiplicar cada ecuación por el número distinto de 0 que sea necesario para conseguirlo. </p>
+            <p>2. Sumamos o restamos las ecuaciones</p>
+            <p>Sumamos las ecuaciones para eliminar la y:</p>
+            <img src="img/topic1-2/sumres.png">
+            <p>3. Resolvemos la ecuación obtenida</p>
+            <p>3x=21</p>
+            <p>x=21/3</p>
+            <p>x=7</p>
+            <p>4. Calculamos la otra incógnita sustituyendo</p>
+            <p>Sustituimos la incógnita x por 7 en alguna de las ecuaciones y la resolvemos:</p>
+            <p>x-y=2</p>
+            <p>7-y=2</p>
+            <p>y=7-2</p>
+            <p>y=5</p>
+            <p>La solución del sistema es:</p>
+            <p>x=7</p>
+            <p>y=5</p>
+            <br>
+            <p class="text-subtitle">Determinantes</p>
+            <p>Consiste en encontrar la determinante de X y de Y, y la del sistema.</p>
+            <p class="text-subsubtitle">Ejemplo</p>
+            <p>5x-2y=-2</p>
+            -3x+7y=-22</p>
+            Para resolverlo utilizando el método de determinantes, tenemos que siempre resolver los siguientes cálculos, para todos los sistemas de ecuaciones independientemente de sus valores, las resolución es siempre la misma y hay que plantear lo siguiente.</p>
+            <img src="img/topic1-2/det1.jpg"> 
+            <p>Pero, ¿como calculo los determinantes de X,Y y el del sistema? muy simple, de la siguiente manera.</p>            
+            <img src="img/topic1-2/det2.png">
+            <p>Para Calcular el determinante del sistema ΔS, Armamos el determinante solo con los valores que estan multiplicando a la X y la Y. Es por eso que nos queda la estructura que vimos arriba, luego multiplicamos cruzados, y restamos los múltiplos.</p>
+            Para Calcular el determinante de X ΔX  lo que tenemos que hacer es armarnos el determinante con los valores que están a la derecha del signo igual, y con los valores que están multiplicando a la Y. De esta forma obtenemos el determinante que vimos arriba. luego la operatoria es la misma, multiplicamos cruzado y restamos las multiplicaciones.</p>
+            Para Calcular el determinante de Y ΔY  lo que tenemos que hacer es armarnos el determinante con los valores que están a la derecha del signo igual, y con los valores que están multiplicando a la X. De esta forma obtenemos el determinante que vimos arriba. Luego la operatoria es la misma, multiplicamos cruzado y restamos las multiplicaciones.</p>
+            Ahora que ya tenemos los valores de los determinantes, lo que sigue es encontrar los valores correspondientes a X e Y, y de esa forma resolvemos la ecuación. Para eso debemos hacer uso de las formulas que están en la segunda imagen.</p>
+            Es decir que para calcular el valor de X tenemos que dividir el determinante de X con el Determinante del sistema y para encontrar el valor de Y tenemos que dividir el determinante de Y con el determinante del sistema.</p>
+            <img src="img/topic1-2/det3.png">
+            <br>
+            <div class="block-btn">
+                <a href=""><i class="icon icon-chevron-left"></i></a>
+                <a href=""><i class="icon icon-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
