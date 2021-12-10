@@ -87,7 +87,7 @@ let questions = [
         choice3: "5",
         choice4: "4",
         answer: 1,
-    }
+    },
     {
         question: "Pregunta : Hallar la altura del trapecio ",
         choice1: "13",
