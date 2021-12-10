@@ -14,6 +14,7 @@ CREATE TABLE user (
     user_name VARCHAR(15) NOT NULL,
     user_password VARCHAR(60) NOT NULL,
     user_email VARCHAR(30) NOT NULL,
+    type_course INT(1) NOT NULL,
     PRIMARY KEY (id_user)
 ) ENGINE=innidb;
 

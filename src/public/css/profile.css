@@ -1,0 +1,103 @@
+.content {
+    display: flex;
+}
+main > .user,
+main > .info {
+    display: block;
+    width: 50%;
+    height: 100%;
+}
+main > .user {
+    background: #f6f6f6;
+}
+main > .user h1,
+main > .info h1 {
+    text-align: center;
+    padding: 5% 0 10% 0;
+    color: var(--blue2);
+    margin-top: 20%;
+}
+main > .user img {
+    display: block;
+    width: 40%;
+    margin: auto;
+}
+main > .user .user_name {
+    text-align: center;
+    padding: 5% 0 1% 0;
+    font-size: 1.5vw;
+    color: var(--blue3);
+    font-weight: 800;
+    text-transform: none;
+}
+main > .user p {
+    text-align: center;
+    color: var(--blue5);
+    text-transform: uppercase;
+    font-size: 0.85vw;
+    font-weight: 800;
+}
+main > .info form {
+    width: 50%;
+    margin: auto;
+}
+main > .info form label {
+    display: block;
+    padding: 0 0 0.75vw 0;
+    text-transform: uppercase;
+    font-size: 0.7vw;
+    color: var(--blue2);
+    letter-spacing: 0.1vw;
+}
+main > .info form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 2vh;
+    padding: 1vw;
+    font-size: 0.85vw;
+    border-radius: 0.75vw;
+    color: var(--blue5);
+    text-align: center;
+    border: none;
+    transition: all 0.3s;
+    outline: none;
+}
+main > .info form input[type=email]:hover,
+main > .info form input[type=password]:hover {
+    background: rgba(0, 0, 0, 0.05);
+} 
+main > .info form input[type=email]:focus,
+main > .info form input[type=password]:focus {
+    text-align: left;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid var(--blue5);
+}
+main > .info form input[type=submit] {
+    color: var(--blue2);
+}
+main > .info form input[type=submit]:hover {
+    background: var(--blue5);
+    color: white;
+    cursor: pointer;
+}
+main > .info .info-container {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    padding: 4vh 0;
+}
+main > .info .info-container .block-info {
+    display: block;
+    width: 50%;
+    text-align: center;
+}
+main > .info .info-container .block-info .title {
+    font-size: 1vw;
+    color: var(--blue3);
+    font-family: Klavika Medium;
+}
+main > .info .info-container .block-info .value {
+    font-size: 1.2vw;
+    color: var(--blue4);
+}

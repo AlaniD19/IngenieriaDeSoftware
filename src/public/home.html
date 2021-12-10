@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Mathebasics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="menu">
+        <div class="logo">
+            <p>M</p>
+            <p>b</p>
+            <span>v1.0</span>
+        </div>
+        <a href="/profile" class="user_p">
+            <div class="user_profile">
+                <img src="img/avatar_6.png" alt="">
+                <p>Alan iD</p>
+                <i class="icon icon-chevron-right"></i>
+            </div>
+        </a>
+        <ul class="options">
+            <li>
+                <a href="/home">
+                    <i class="icon icon-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/progress">
+                    <i class="icon icon-pie-chart"></i>
+                    <span>Progreso</span>
+                </a>
+            </li>
+        </ul>
+        <a href="/logout" class="logout_buttom">
+            <i class="icon icon-log-out"></i>
+            <span>Cerrar sesión</span>
+        </a>
+    </nav>
+
+    <!-- DATA DISPLAY -->
+    <main class="content">
+        <div class="type_class">
+            <div class="class">
+                <h2>¿Cómo te gustaría recorrer la plataforma?</h2>
+                <div class="btn_block">
+                    <button id="guide">Guiado</button>
+                    <button id="free">Libre</button>
+                </div>
+                <div class="info guide">
+                    En ese modo empezaras desde cero dentro del curso. Tomarás el material de acuerdo al plan
+                    propuesto por la SEP. Al final de cada unidad te encontraras un examen, cuando lo hayas aprobado
+                    se desbloqueara la siguiente unidad.
+                </div>
+                <div class="info free">
+                    Tendrás acceso total a los matriales en todo momento, puedes repasar solo las lecciones, o estudiar
+                    aplicando solo los examenes. La plataforma estará abierta para que puedas comenzar por donde tu desees.
+                </div>
+            </div>
+        </div>
+        <div class="tittle">
+            <img src="img/like-clay.png" alt="">
+            <h1>Hola, <span id="user_id">Alan iD</span></h1>
+        </div>
+        <h4>CURSOS</h4>
+        <div class="course_container">
+            
+            <div class="course available">
+                <div class="level">Secundaria</div>
+                <div class="grade">3er grado</div>
+                <div class="to_course"><a href="/course">Ir al curso <i class="icon icon-chevron-right"></i></a></div>
+            </div>
+            <div class="course">
+                <div class="level">Secundaria</div>
+                <div class="grade">2do grado</div>
+                <div class="to_course">Proximamente</div>
+            </div>
+            <div class="course">
+                <div class="level">Secundaria</div>
+                <div class="grade">1er grado</div>
+                <div class="to_course">Proximamente</div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const guideButton = document.getElementById('guide');
+        const freeButton = document.getElementById('free');
+        const infoGuide = document.querySelector('.guide');
+        const infoFree = document.querySelector('.free');
+
+        guideButton.addEventListener('mouseover', function() {
+            infoGuide.style.display = "block";
+        });
+        guideButton.addEventListener('mouseout', function() {
+            infoGuide.style.display = "none";
+        });
+        freeButton.addEventListener('mouseover', function() {
+            infoFree.style.display = "block";
+        });
+        freeButton.addEventListener('mouseout', function() {
+            infoFree.style.display = "none";
+        });
+    </script>
+</body>
+</html>

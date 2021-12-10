@@ -1,0 +1,106 @@
+main > .title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2% 5%;
+    background: var(--blue5);
+}
+main > .title img {
+    width: 8%;
+}
+main > .title h1 {
+    display: block;
+    width: 92%;
+    padding-left: 2vw;
+    color: white;
+    font-size: 2.5vw;
+    font-weight: 100;
+}
+main > .block-course {
+    display: block;
+    width: 100%;
+    height: 82%;
+    margin: auto;
+    overflow-y: scroll;
+}
+main > .block-course .unit {
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 1.5vw;
+    background: #597ba050;
+    overflow: hidden;
+    display: flex;
+    padding: 2vh 1vw;
+}
+main > .block-course .unit:last-child {
+    margin-bottom: 5vh;
+}
+main > .block-course .unit .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9vh;
+    height: 8vh;
+    background: white;
+    border-radius: 50%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-size: 1.5vw;
+    font-family: Klavika-Bold;
+    color: var(--blue2);
+}
+
+main > .block-course .unit .unit-dataset {
+    padding: 0.5vw 2vw;
+    width: 100%;
+}
+main > .block-course .unit .unit-dataset .unit-name {
+    font-size: 1.5vw;
+    margin-bottom: 2vh;
+    color: var(--blue2);
+    font-family: Klavika-Medium;
+    font-weight: normal;
+}
+main > .block-course .unit .unit-dataset .unit-topics {
+    display: block;
+    width: 100%;
+}
+main > .block-course .unit .unit-dataset .unit-topics ul {
+    display: block;
+    width: 100%;
+}
+main > .block-course .unit .unit-dataset .unit-topics ul a {
+    text-decoration: none;
+    padding: 2vh 1vh;
+    color: var(--blue2);
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #597ba020;
+}
+main > .block-course .unit .unit-dataset .unit-topics ul a li {
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    width: 100%;
+}
+main > .block-course .unit .unit-dataset .unit-topics ul a li p {
+    display: block;
+    width: 90%;
+}
+main > .block-course .unit .unit-dataset .unit-topics ul a li i {
+    display: block;
+    width: 10%;
+}
+main > .block-course .unit .unit-dataset .unit-topics ul a:last-child {
+    padding: 5vh 0 0 1vh;
+    text-align: right;
+    border-bottom: none;
+}
+main > .block-course .unit .unit-dataset .unit-topics ul a:last-child li {
+    display: flex;
+    justify-content: right;
+}
+main > .block-course .unit .unit-dataset .unit-topics ul a:last-child li i {
+    text-align: left;
+}
