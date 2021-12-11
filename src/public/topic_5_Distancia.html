@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Mathebasics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/topic.css">
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="menu">
+        <div class="logo">
+            <p>M</p>
+            <p>b</p>
+            <span>v1.0</span>
+        </div>
+        <a href="/profile" class="user_p">
+            <div class="user_profile">
+                <img src="img/avatar_6.png" alt="">
+                <p>Alan iD</p>
+                <i class="icon icon-chevron-right"></i>
+            </div>
+        </a>
+        <ul class="options">
+            <li>
+                <a href="/home">
+                    <i class="icon icon-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/progress">
+                    <i class="icon icon-pie-chart"></i>
+                    <span>Progreso</span>
+                </a>
+            </li>
+        </ul>
+        <a href="/logout" class="logout_buttom">
+            <i class="icon icon-log-out"></i>
+            <span>Cerrar sesión</span>
+        </a>
+    </nav>
+
+    <!-- DATA DISPLAY -->
+    <main class="content">
+        <div class="title">
+            <img src="img/bookmark-clay.png" alt="">
+            <h1>Unidad 5</h1>
+        </div>
+        <div class="block-topic">
+            <p class="text-title">5.2 Distancia entre dos puntos.</p>
+            <p class="text-subtitle">Plano cartesiano.</p>
+            <p>
+                Para calcular la distancia entre dos puntos es necesario recordar el plano cartesiano. 
+                El plano cartesiano es un diagrama que nos permite localizar puntos específicamente dentro de un sistema de coordenadas que se conocen como Coordenadas Rectangulares, ya que para localizar cada punto P (x,y), 
+                debes avanzar la distancia indicada por la coordenada x sobre el eje horizontal y la distancia y sobre el eje vertical.
+            </p>
+            <p>
+                Por ejemplo, en la siguiente imagen se puede observar un punto A(15, 10), y se puede notar que con respecto al eje horizontal se encuentra en la posición 15 mientras que respecto al eje vertical se encuentra en la posicion 10, como lo indican las coordenadas.
+            </p>
+            <img src = "img/img_Ex5/U5_f20.png" width="300px" height="300px"><br>
+            <p>
+                El plano cartesiano puede contener muchos puntos y hay veces que surge la necesidad de encontrar la distancia entre dos de ellos por lo que para eso vamos a considerar dos posibles casos que se nos pueden presentar.
+            </p>
+            <p class="text-subtitle">Distancia entre dos puntos.</p>
+            <p class="text-subsubtitle">Primer Caso. Distancia entre dos puntos sobre un mismo eje.</p>
+            <p>
+                En este caso los puntos que estamos analizando se encuentran sobre un mismo eje, es decir que si se traza una recta que toque ambos puntos la recta será paralela al eje horizontal o al vertical, o bien la línea pasará sobre alguno de los ejes.
+            </p>
+            <p>
+                Al observar las coordenadas de los puntos que entran en este caso, podremos observar una particularidad, y es que los valores de x o de y, van a ser iguales para ambos puntos, y el otro valor será diferente para ambos.
+            </p>
+            <p>
+                Entonces, para encontrar la distancia entre los dos puntos, vamos a realizar una resta con los valores que sean diferentes, y vamos a tomar el valor absoluto del resultado de dicha resta ya que la distancia siempre se expresa con números positivos.
+            </p>
+            <p>
+                Ejemplo.
+            </p>
+            <p>
+                Se tienen los siguientes puntos en un plano cartesiano, calcule la distancia entre ellos.
+            </p>
+            <img src = "img/img_Ex5/U5_f21.png" width="300px" height="300px"><br>
+            <p>
+                Observamos que el valor de y es el mismo para ambos puntos, y si trazamos una recta que pase por ambos puntos, observaremos que esta es paralela al eje horizontal.
+            </p>
+            <img src = "img/img_Ex5/U5_f22.png" width="300px" height="300px"><br>
+            <p>
+                Por lo que ahora vamos a calcular la distancia haciendo una resta entre los valores de x que tiene cada punto, ya que estos son los que son diferentes entre sí.
+            </p>
+            <img src = "img/img_Ex5/U5_f23.png" width="190px" height="40px"><br>
+            <p>
+                Y de esta forma tan sencilla es como se calcula la distancia entre ambos puntos.
+            </p>
+            <p>
+                Si los puntos se encuentran paralelos al eje vertical, el procedimiento sigue siendo el mismo pero ahora se restan los valores “y” de ambos puntos. Por ejemplo, vamos a calcular la distancia entre los siguientes dos puntos.
+            </p>
+            <img src = "img/img_Ex5/U5_f24.png" width="300px" height="300px"><br>
+            <p>
+                Vemos que al trazar una recta que pase por ambos puntos, esta resulta ser paralela al eje vertical, y además vemos que el valor “x” de ambos puntos es el mismo, por lo que hay que realizar la resta entre los valores “y” ya que estos son diferentes entre sí.
+            </p>
+            <img src = "img/img_Ex5/U5_f25.png" width="280x" height="40px"><br>
+            <p>
+                Y de esta forma encontramos la distancia entre ambos puntos.
+            </p>
+            <p class="text-subsubtitle">
+                Segundo caso. Distancia entre dos puntos que no estén sobre un mismo eje.
+            </p>
+            <p>
+                Con base en el teorema de Pitágoras es posible calcular la distancia entre dos puntos en el
+                plano cartesiano. La intención es construir un triángulo rectángulo. Considera dos puntos
+                cualesquiera, P1 y P2, en el plano.
+            </p>
+            <img src = "img/img_Ex5/U5_f26.png" width="300x" height="300px"><br>
+            <p>
+                Al unir a los dos puntos con una línea recta, la distancia entre los dos puntos corresponde a la longitud del segmento de la recta que los conecta, denominamos a esto como d<sub>1,2</sub>
+            </p>
+            <img src = "img/img_Ex5/U5_f27.png" width="300x" height="300px"><br>
+            <p>
+                Para encontrar la forma de determinar la distancia del segmento que une dos puntos se dibuja una recta paralela al eje Y y que pase por el punto P1 y una recta paralela al eje X que pase por el punto P2; el punto donde se intersectan las rectas que se dibujaron se le denomina P3.
+            </p>
+            <img src = "img/img_Ex5/U5_f28.png" width="300x" height="300px"><br>
+            <p>
+                Observa en la siguiente figura que ahora se tienen tres segmentos los cuales forman un triángulo rectángulo. Para encontrar un triángulo semejante al de la figura anterior, a cada segmento se le asignará una letra, entonces se tiene:
+            </p>
+            <p>
+                d<sub>1,2</sub> = c
+            </p>
+            <p>
+                d<sub>1,3</sub> = b
+            </p>
+            <p>
+                d<sub>2,3</sub> = a
+            </p>
+            <img src = "img/img_Ex5/U5_f29.png" width="300x" height="300px"><br>
+            <p>
+                En la figura anterior el segmento c corresponde a la hipotenusa y los segmentos a y b los catetos. Para poder calcular la distancia es necesario obtener las coordenadas de cada punto, supongamos que las coordenadas para el punto P1 son (x<sub>1</sub>, y<sub>1</sub>), las coordenadas del punto P2 son (x<sub>2</sub>, y<sub>2</sub>), y por la forma en que construimos el punto P3 sus coordenadas son (x<sub>1</sub>, y<sub>2</sub>). 
+            </p>
+            <img src = "img/img_Ex5/U5_f30.png" width="300x" height="300px"><br>
+            <p>
+                A partir de utilizar la ecuación para calcular la distancia entre dos puntos en la recta numérica, <i>d(A,B)=|A-B|</i>, y con base en el teorema de Pitágoras se puede deducir la fórmula para calcular la distancia entre dos puntos en el plano cartesiano. Para calcular el tamaño del segmento a, que corresponde a la distancia entre los puntos P2 y P3 , 
+                primeramente hay que observar que poseen la misma coordenada en y; puedes visualizar que estos dos puntos se encuentran sobre un mismo eje. Aplicando la fórmula para calcular la distancia en la recta numérica se tiene.
+            </p>
+            <p>
+                d(P2, P3)=|x<sub>1</sub>-x<sub>2</sub>|=a
+            </p>
+            <p>
+                De manera semejante, se puede calcular el tamaño de segmento b, que corresponde la distancia entre los puntos P1 y P3, en este caso estos puntos comparten el mismo valor de la abscisa x, se puede deducir que.
+            </p>
+            <p>
+                d(P1, P3)=|y<sub>1</sub>-y<sub>2</sub>|=b
+            </p>
+            <img src = "img/img_Ex5/U5_f31.png" width="300x" height="300px"><br>
+            <p>
+                Recuerda que el teorema de Pitágoras se expresa como:
+            </p>
+            <p>
+                a<sup>2</sup>+b<sup>2</sup>=c<sup>2</sup>
+            </p>
+            <p>
+                Sustituyendo las expresiones obtenidas para calcular la distancia se tiene la siguiente ecuación.
+            </p>
+            <p>
+                ( | x<sub>1</sub> - x<sub>2</sub> | )<sup>2</sup> + ( | y<sub>1</sub> - y<sub>2</sub> | )<sup>2</sup> = c<sup>2</sup>
+            </p>
+            <p>
+                Puesto que el cuadrado de un número siempre es positivo se puede omitir el valor absoluto llegando a la expresión:
+            </p>
+            <p>
+                (  x<sub>1</sub> - x<sub>2</sub>  )<sup>2</sup> + (  y<sub>1</sub> - y<sub>2</sub>  )<sup>2</sup> = c<sup>2</sup>
+            </p>
+            <p>
+                Ten en mente que lo que se quiere calcular es la distancia entre los dos puntos, P1 y P2, 
+                y que corresponde al segmento c, por lo tanto es necesario manipular la ecuación para despejar la variable que se busca, aplicando la raíz cuadrada en ambos lados de la ecuación se tiene que:
+            </p>
+            <p>
+                √((  x<sub>1</sub> - x<sub>2</sub>  )<sup>2</sup> + (  y<sub>1</sub> - y<sub>2</sub>  )<sup>2</sup>) = c
+            </p>
+            <p>
+                Regresando a la definición de distancia y recordando que corresponde a d(P1, P2) , la fórmula final es:
+            </p>
+            <P>
+                d(P1, P2) = √((  x<sub>1</sub> - x<sub>2</sub>  )<sup>2</sup> + (  y<sub>1</sub> - y<sub>2</sub>  )<sup>2</sup>)
+            </P>
+            <p>
+                Al definir que P1 y P2 son dos puntos cualesquiera en el plano cartesiano, la fórmula anterior es la fórmula general para calcular la distancia entre dos puntos sobre el plano cartesiano.
+            </p>
+            <p class="text-subsubtitle">
+                Ejemplos.
+            </p>
+            <p>
+                Ahora que hemos definido la fórmula general para encontrar la distancia entre dos puntos cualquiera, vamos a ver un ejemplo de esto.
+            </p>
+            <p>
+                Se tienen los puntos A(5,10) y B(-8, 9) calcular la distancia entre ambos puntos.
+                Lo primero es identificar correctamente los componentes de las coordenadas de ambos puntos. 
+                Así que recordemos que en un sistema de coordenadas se expresa primero el componente horizontal que se representa mediante una “x” y después el vertical representado por una “y”, entonces tenemos los siguientes datos.
+            </p>
+            <p>
+                x<sub>a</sub> = 5
+            </p>
+            <p>
+                y<sub>a</sub> = 10
+            </p>
+            <p>
+                x<sub>b</sub> = -8
+            </p>
+            <p>
+                y<sub>b</sub> = 9
+            </p>
+            <p>
+                Hagamos que el punto A sea nuestro P1 y B nuestro P2. Entonces podremos decir lo siguiente.
+            </p>
+            <p>
+                x<sub>1</sub> = x<sub>a</sub> = 5
+            </p>
+            <p>
+                y<sub>1</sub> = y<sub>a</sub> = 10
+            </p>
+            <p>
+                x<sub>2</sub> = x<sub>b</sub> = -8
+            </p>
+            <p>
+                y<sub>2</sub> = y<sub>b</sub> = 9
+            </p>
+            <p>
+                Ya con esto tenemos los datos que necesitamos para hacer uso de la fórmula y encontrar la distancia entre dos puntos.
+            </p>
+            <p>
+                Escribimos la fórmula.
+            </p>
+            <p>
+                d(P1, P2) = √((  x<sub>1</sub> - x<sub>2</sub>  )<sup>2</sup> + (  y<sub>1</sub> - y<sub>2</sub>  )<sup>2</sup>)
+            </p>
+            <p>
+                Sustituimos los datos que tenemos.
+            </p>
+            <p>
+                d(P1, P2) = √((  (5) - (-8)  )<sup>2</sup> + (  (10) - (9)  )<sup>2</sup>) 
+            </p>
+            <p>
+                Quitamos los paréntesis de adentro, recordemos que los paréntesis indican multiplicación y qué menos por menos es más.
+            </p>
+            <p>
+                d(P1, P2) = √((  5 + 8  )<sup>2</sup> + (  10 - 9  )<sup>2</sup>) 
+            </p>
+            <p>
+                Realizamos las sumas o restas según sea el caso.
+            </p>
+            <p>
+                d(P1, P2) = √(( 13 )<sup>2</sup> + ( 1 )<sup>2</sup>) 
+            </p>
+            <p>
+                Elevamos al cuadrado.
+            </p>
+            <p>
+                d(P1, P2) = √( 169 + 1 ) 
+            </p>
+            <p>
+                Sumamos.
+            </p>
+            <p>
+                d(P1, P2) = √( 170 ) 
+            </p>
+            <p>
+                Calculamos la raíz cuadrada.
+            </p>
+            <p>
+                d(P1, P2) = 13.038
+            </p>
+            <p>
+                Y de esta forma hemos calculado la distancia entre los puntos A y B.
+            </p>
+            
+            <div class="block-btn">
+                <a href=""><i class="icon icon-chevron-left"></i></a>
+                <a href=""><i class="icon icon-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

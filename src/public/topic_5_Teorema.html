@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Mathebasics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/topic.css">
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="menu">
+        <div class="logo">
+            <p>M</p>
+            <p>b</p>
+            <span>v1.0</span>
+        </div>
+        <a href="/profile" class="user_p">
+            <div class="user_profile">
+                <img src="img/avatar_6.png" alt="">
+                <p>Alan iD</p>
+                <i class="icon icon-chevron-right"></i>
+            </div>
+        </a>
+        <ul class="options">
+            <li>
+                <a href="/home">
+                    <i class="icon icon-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/progress">
+                    <i class="icon icon-pie-chart"></i>
+                    <span>Progreso</span>
+                </a>
+            </li>
+        </ul>
+        <a href="/logout" class="logout_buttom">
+            <i class="icon icon-log-out"></i>
+            <span>Cerrar sesión</span>
+        </a>
+    </nav>
+
+    <!-- DATA DISPLAY -->
+    <main class="content">
+        <div class="title">
+            <img src="img/bookmark-clay.png" alt="">
+            <h1>Unidad V</h1>
+        </div>
+        <div class="block-topic">
+            <p class="text-title">5.1 Teorema de Pitágoras</p>
+            <p class="text-subtitle">Triangulos rectángulos</p>
+            <p>Antes de ver el teorema de Pitágoras, conviene recordar algunos conceptos que nos pueden ayudar a comprender mejor el teorema. 
+                Lo primero que debemos recordar es lo concerniente a los triángulos rectángulos. Un triángulo rectángulo, es cualquier triángulo que tenga un ángulo que mida 90°, (recuerda que puedes medir ángulos con el transportador). 
+                Pero como es muy tedioso estar midiendo los ángulos de cada triángulo que vayamos a trabajar, se suele denotar un angulo recto (angulo que mide 90°) de un triángulo, dibujando un pequeño cuadradito junto al ángulo que mide 90°, 
+                de esta forma podemos identificar más fácilmente las partes de un triángulo rectángulo.
+            </p>
+            <img src="img/img_Ex5/U5_f1.png" width="250px" height="270px">
+            
+            <p>En la imagen anterior observamos que, además del pequeño cuadro que nos indica cual es ángulo recto de este triángulo, hay varias letras, estas letras nos sirven para identificar tanto los lados como los ángulos, 
+                son una especie de nombres que nos ayudan a referirnos a un lado o a un ángulo en específico de una forma más directa y sencilla. En este caso, las letras minúsculas son las que dan nombre a los lados mientras que las mayúsculas hacen lo propio con los ángulos, de esta forma, 
+                de acuerdo con la siguiente imagen, podemos saber que el ángulo recto puede ser identificado mediante la letra “C”, y los otros ángulos se llaman “A” y “B”.
+            </p>
+            <p>
+                Para ocupar el teorema de Pitágoras es muy importante identificar la hipotenusa del triángulo, la hipotenusa es simplemente el lado más largo del triángulo, este suele ser el lado opuesto al ángulo recto del triángulo, es decir el lado que está enfrente del ángulo recto. 
+                En nuestra imagen de ejemplo, la hipotenusa está designada con la letra “c”  minúscula.
+            </p>
+            <p>
+                Los otros lados designados en la imagen por las letras “a” y “b” se llaman catetos, estos suelen ser los lados que se encuentran adyacentes al ángulo recto, es decir, que el ángulo recto se encuentra en medio de ambos catetos.
+                Ahora que están definidos los lados de un triángulo rectángulo podemos enunciar el teorema de Pitágoras.
+            </p>
+            <br/>
+            <p class="text-subtitle">Teorema de Pitágoras</p>
+            <p>El teorema de Pitagoras dice que, Si a y b son las longitudes de los catetos de un triángulo rectángulo y c es la longitud de la hipotenusa, entonces la suma de los cuadrados de las longitudes de los catetos es igual al cuadrado de la longitud de la hipotenusa.
+                Esto se expresa de forma algebraica con la siguiente expresión:
+            </p>
+            <img src="img/img_Ex5/U5_f2.png" width="90px" height="40px">
+            <p>
+                Por si se te dificulta entender la expresión anterior, vamos a verla de manera más gráfica. 
+                El teorema habla de la suma de los cuadrados de las longitudes de los catetos, así que empecemos por ahí, para entender qué es el cuadrado de la longitud de un cateto, empecemos por imaginar un triángulo que tenga un cateto cuya longitud sea igual a 3 unidades.
+            </p>
+            <img src="img/img_Ex5/U5_f3.png" width="130px" height="180px">
+            <p>
+                Las marcas que se observan en el cateto de abajo del triángulo representan la unidad de medida, pueden ser centímetros, metros, etc. Con esto tenemos la longitud de un cateto, ahora bien el cuadrado de la longitud de un cateto no es más que el área de un cuadrado cuyo lado sea igual a la longitud del cateto. 
+                Por lo que para observar esto podríamos dibujar un cuadrado tomando como lado el cateto de tres unidades, quedando de la siguiente forma.
+            </p>
+            <img src="img/img_Ex5/U5_f4.png" width="130px" height="220px">
+            <p>
+                Por lo que ya tenemos el cuadrado de la longitud de un cateto, pero recordemos que el teorema dice algo de la suma de los cuadrados de las longitudes de los catetos, por lo que nos hace falta el cuadrado de la longitud del otro cateto, 
+                para esto digamos que el otro cateto mide 4 unidades, de forma que al dibujar su cuadrado se veria asi.
+            </p>
+            <img src="img/img_Ex5/U5_f5.png" width="200px" height="220px">
+            <p>
+                Entonces, lo que dice el teorema es que la suma de los cuadrados de las longitudes de los catetos es igual al cuadrado de la longitud de la hipotenusa.  Entonces tendríamos la siguiente suma.
+            </p>
+            <img src="img/img_Ex5/U5_f6.png" width="400px" height="180px">
+            <p>
+                Si descomponemos cada cuadro en sus unidades cuadradas y luego las reacomodamos formando con ellas un nuevo cuadro más grande obtendremos el siguiente cuadro.
+            </p>
+            <img src="img/img_Ex5/U5_f7.png" width="180px" height="180px">
+            <p>
+                Este cuadro es la representación de la suma de los cuadrados de las longitudes de los catetos, por lo que de acuerdo al teorema, también es el cuadrado de la longitud de la hipotenusa. 
+                Por lo que la longitud de uno de los lados del cuadrado es la longitud de la hipotenusa del triángulo. De forma que podemos dibujar lo siguiente.
+            </p>
+            <img src="img/img_Ex5/U5_f8.png" width="280px" height="280px">
+            <p>
+                Y de esta forma podemos apreciar gráficamente la relación expresada por el teorema de Pitágoras.
+            </p>
+            <p>
+                Ahora hagámoslo con números. En el mismo ejemplo anterior, digamos que el cateto “a” es el lado que mide 3 unidades, y el cateto “b” es el que mide 4 unidades. Además como vimos al final la hipotenusa mide 5 unidades.
+                Entonces tenemos los siguientes datos.
+            </p>
+            <img src="img/img_Ex5/U5_f9.png" width="35px" height="55px">
+            <p>
+                Entonces, calculamos los cuadrados de las longitudes de los catetos y los de la hipotenusa, para lo cual simplemente hay que multiplicar la longitud por sí misma, por lo que tenemos.
+            </p>
+            <img src="img/img_Ex5/U5_f10.png" width="90px" height="70px">
+            <p>
+                De acuerdo al teorema, al sumar los cuadrados de los catetos se obtiene el de la hipotenusa por lo que en este caso al sumarlos debemos obtener 25, por lo que vamos a sumarlos.
+            </p>
+            <img src="img/img_Ex5/U5_f11.png" width="120px" height="40px">
+            <p>
+                Al sumar nos da 25 que es lo mismo que el cuadrado de la hipotenusa, por lo que, lo que el teorema nos dice se ha cumplido.
+            </p>
+
+            <p>
+                El principal uso que se le da al teorema de Pitágoras es para encontrar la longitud del  tercer lado de un triángulo cuando tenemos dos de ellos, 
+                ya sea que tengamos los catetos o un cateto y la hipotenusa, gracias al álgebra podemos encontrar la longitud del lado faltante.
+            </p>
+            <p>
+                Por ejemplo, supongamos que tenemos el siguiente triángulo rectángulo, observamos que conocemos la longitud del cateto a y la longitud del cateto b por lo que hay que calcular la longitud de la hipotenusa c.
+            </p>
+            <img src="img/img_Ex5/U5_f12.png" width="350px" height="200px">
+            <p>
+                Para ello seguimos los siguientes pasos.
+            </p>
+            <p>
+                Primero escribimos el teorema de Pitágoras.
+            </p>
+            <img src="img/img_Ex5/U5_f2.png" width="90px" height="40px">
+            <p>
+                Tenemos los siguientes datos: a = 5 y b = 12. 
+                Por lo que hay que sustituirlos en la fórmula. Quedando de la siguiente forma.
+            </p>
+            <img src="img/img_Ex5/U5_f13.png" width="110px" height="40px">
+            <p>
+                Encontramos los cuadrados multiplicando las longitudes por sí mismas y luego sumamos.
+            </p>
+            <img src="img/img_Ex5/U5_f14.png" width="160px" height="100px">
+            <p>
+                Hemos encontrado el cuadrado de la hipotenusa, pero nosotros queremos la longitud, para lograr esto es necesario encontrar un número que al ser multiplicado por sí mismo nos de como resultado 169, 
+                esto lo logramos aplicando la raíz cuadrada a ambos lados de la ecuación.
+            </p>
+            <img src="img/img_Ex5/U5_f15.png" width="100px" height="50px">
+            <p>
+                Y con esto encontramos la longitud de la hipotenusa la cual es de 13 unidades.
+            </p>
+
+            <p>
+                Para encontrar uno de los catetos cuando tenemos la hipotenusa y el otro cateto se sigue un procedimiento muy similar pero con algunas pequeñas variaciones. 
+                Veamos el siguiente ejemplo donde nos piden calcular el cateto a.
+            </p>
+            <img src="img/img_Ex5/U5_f16.png" width="150px" height="120px">
+            <p>
+                Escribimos el teorema de Pitágoras.
+            </p>
+            <img src="img/img_Ex5/U5_f2.png" width="90px" height="40px">
+            <p>
+                Tenemos los siguientes datos: b = 6  y c = 7.</br>
+                Observamos que en este caso queremos encontrar “a” pero nos esta estorbando “b” por lo que hay que despejar.  
+            </p>
+            <img src="img/img_Ex5/U5_f17.png" width="90px" height="40px">
+            <p>
+                Ya hemos despejado “a” por lo que procedemos a sustituir los valores conocidos. Y luego operamos como en el primer ejemplo.
+            </p>
+            <img src="img/img_Ex5/U5_f18.png" width="110px" height="115px">
+            <p>
+                Aplicamos la raíz cuadrada a ambos lados de la ecuación.
+            </p>
+            <img src="img/img_Ex5/U5_f19.png" width="70px" height="70px">
+            <p>
+                y con esto encontramos la longitud del cateto “a”. 
+            </p>
+            <p>
+                Y de esta forma es como se encuentra uno de los catetos de un triángulo rectángulo cuando tenemos la hipotenusa y el otro cateto, por supuesto, 
+                cuando se va a encontrar el cateto b solo es cuestión de despejar este en la fórmula, pero el resto de los pasos son prácticamente los mismos.
+            </p>
+            <div class="block-btn">
+                <a href=""><i class="icon icon-chevron-left"></i></a>
+                <a href=""><i class="icon icon-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
