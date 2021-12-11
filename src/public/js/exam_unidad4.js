@@ -7,6 +7,7 @@ const finalPage = document.querySelector("#finalPage");
 const finalScore = document.querySelector("#finalScore");
 const reset = document.querySelector("#reset");
 const register = document.querySelector("#register");
+const imagen = document.querySelector("#imagen");
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -23,6 +24,11 @@ let questions = [
         choice3: "x = 16°",
         choice4: "x = 40°",
         answer: 2,
+        image: {
+            fuente: "img/img_Ex4/ex_1.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : Calcular 'x' de la figura BQ = AC y AQ = QC",
@@ -31,6 +37,11 @@ let questions = [
         choice3: "x = 25°",
         choice4: "x = 30°",
         answer: 4,
+        image: {
+            fuente: "img/img_Ex4/ex_2.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : Hallar el valor de 'x' ",
@@ -39,6 +50,11 @@ let questions = [
         choice3: "x = 30°",
         choice4: "x = 16°",
         answer: 1,
+        image: {
+            fuente: "img/img_Ex4/ex_3.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : Hallar el valor de 'x' ",
@@ -47,6 +63,11 @@ let questions = [
         choice3: "x = 36°",
         choice4: "x = 15°",
         answer: 2,
+        image: {
+            fuente: "img/img_Ex4/ex_4.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : En la figura AB = CD y AD = EC. Halle x",
@@ -55,6 +76,11 @@ let questions = [
         choice3: "x = 28°",
         choice4: "x = 32°",
         answer: 3,
+        image: {
+            fuente: "img/img_Ex4/ex_5.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : Calcular x",
@@ -63,6 +89,11 @@ let questions = [
         choice3: "x = 5",
         choice4: "x = 4",
         answer: 2,
+        image: {
+            fuente: "img/img_Ex4/ex_6.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : En la figura, si AP = 4 y PC = 4, calcular BC",
@@ -71,6 +102,11 @@ let questions = [
         choice3: "x = 6",
         choice4: "x = 4",
         answer: 3,
+        image: {
+            fuente: "img/img_Ex4/ex_7.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : Calcule x ",
@@ -79,6 +115,11 @@ let questions = [
         choice3: "x = 12",
         choice4: "x = 6",
         answer: 4,
+        image: {
+            fuente: "img/img_Ex4/ex_8.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : Hallar PQ, si ¬PQ // ¬AC",
@@ -87,6 +128,11 @@ let questions = [
         choice3: "5",
         choice4: "4",
         answer: 1,
+        image: {
+            fuente: "img/img_Ex4/ex_9.jpg",
+            width: "300px",
+            height: "300px",
+        },
     },
     {
         question: "Pregunta : Hallar la altura del trapecio ",
@@ -95,6 +141,11 @@ let questions = [
         choice3: "15",
         choice4: "14",
         answer: 3,
+        image: {
+            fuente: "img/img_Ex4/ex_10.jpg",
+            width: "300px",
+            height: "300px",
+        },
     }
 ];
 
@@ -113,6 +164,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
         finalScore.innerText = score;
+        imagen.innerHTML = "";
         return finalPage.classList.add("active");
     }
 
@@ -123,7 +175,11 @@ getNewQuestion = () => {
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
-
+    if(currentQuestion.image.fuente != ""){
+        imagen.innerHTML = "<img id = \"img\" src=\""+currentQuestion.image.fuente+"\" width=\""+currentQuestion.image.width+"\" height=\""+currentQuestion.image.height+"\"/>"
+    }else{
+        imagen.innerHTML = ""
+    }
     choices.forEach(choice => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
