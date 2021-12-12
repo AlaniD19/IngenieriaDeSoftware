@@ -20,14 +20,14 @@
         </div>
         <a href="/profile" class="user_p">
             <div class="user_profile">
-                <img src="img/avatar_6.png" alt="">
-                <p>Alan iD</p>
+                <img src="img/avatar_6.png" alt="" id="avatar">
+                <p><%=user.user_name %></p>
                 <i class="icon icon-chevron-right"></i>
             </div>
         </a>
         <ul class="options">
             <li>
-                <a href="/home">
+                <a href="/dashboard">
                     <i class="icon icon-home"></i>
                     <span>Inicio</span>
                 </a>
@@ -47,7 +47,7 @@
 
     <!-- DATA DISPLAY -->
     <main class="content">
-        <div class="type_class">
+        <div class="type_class" id="type_class">
             <div class="class">
                 <h2>¿Cómo te gustaría recorrer la plataforma?</h2>
                 <div class="btn_block">
@@ -66,8 +66,8 @@
             </div>
         </div>
         <div class="tittle">
-            <img src="img/like-clay.png" alt="">
-            <h1>Hola, <span id="user_id">Alan iD</span></h1>
+            <img src="img/like-clay.png" alt="manita arriba">
+            <h1>Hola, <span id="user_id"><%=user.user_name%></span></h1>
         </div>
         <h4>CURSOS</h4>
         <div class="course_container">
@@ -89,24 +89,12 @@
             </div>
         </div>
     </main>
-    <script>
-        const guideButton = document.getElementById('guide');
-        const freeButton = document.getElementById('free');
-        const infoGuide = document.querySelector('.guide');
-        const infoFree = document.querySelector('.free');
+    <form action="/registerTypeCourse" method="post" id="form_class">
+        <input type="hidden" id="type_course" value="<%= user.type_course%>" name="type">
+        <input type="submit" style="display: none;" id="form-btn">
+    </form>
 
-        guideButton.addEventListener('mouseover', function() {
-            infoGuide.style.display = "block";
-        });
-        guideButton.addEventListener('mouseout', function() {
-            infoGuide.style.display = "none";
-        });
-        freeButton.addEventListener('mouseover', function() {
-            infoFree.style.display = "block";
-        });
-        freeButton.addEventListener('mouseout', function() {
-            infoFree.style.display = "none";
-        });
-    </script>
+    <script src="js/profile_img.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>

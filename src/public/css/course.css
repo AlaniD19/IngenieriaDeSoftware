@@ -19,7 +19,7 @@ main > .title h1 {
 main > .block-course {
     display: block;
     width: 100%;
-    height: 82%;
+    height: 81%;
     margin: auto;
     overflow-y: scroll;
 }
@@ -29,11 +29,89 @@ main > .block-course .unit {
     margin: auto;
     margin-top: 5vh;
     border-radius: 1.5vw;
-    background: #597ba050;
+    background: #597ba020;
     overflow: hidden;
     display: flex;
     padding: 2vh 1vw;
 }
+main > .block-course .unit:nth-child(2) {
+    background: #11AC8320;
+}
+main > .block-course .unit:nth-child(2) .number {
+    color: var(--success);
+}
+main > .block-course .unit:nth-child(2) .unit-dataset .unit-name {
+    color: var(--success);
+}
+main > .block-course .unit:nth-child(2) .unit-dataset .unit-topics ul a {
+    color: var(--success);
+    border-bottom: 1px solid #11AC8350;
+}
+main > .block-course .unit:nth-child(3) {
+    background: #F0325B20;
+}
+main > .block-course .unit:nth-child(3) .number {
+    color: var(--error);
+}
+main > .block-course .unit:nth-child(3) .unit-dataset .unit-name {
+    color: var(--error);
+}
+main > .block-course .unit:nth-child(3) .unit-dataset .unit-topics ul a {
+    color: var(--error);
+    border-bottom: 1px solid #F0325B20;
+}
+main > .block-course .unit:nth-child(4) {
+    background: #EEAF7820;
+}
+main > .block-course .unit:nth-child(4) .number {
+    color: var(--warning);
+}
+main > .block-course .unit:nth-child(4) .unit-dataset .unit-name {
+    color: var(--warning);
+}
+main > .block-course .unit:nth-child(4) .unit-dataset .unit-topics ul a {
+    color: var(--warning);
+    border-bottom: 1px solid #EEAF7820;
+}
+main > .block-course .unit:nth-child(5) {
+    background: #00D0FF20;
+}
+main > .block-course .unit:nth-child(5) .number {
+    color: var(--blue4);
+}
+main > .block-course .unit:nth-child(5) .unit-dataset .unit-name {
+    color: var(--blue4);
+}
+main > .block-course .unit:nth-child(5) .unit-dataset .unit-topics ul a {
+    color: var(--blue4);
+    border-bottom: 1px solid #00D0FF20;
+}
+
+
+
+main > .block-course .unit:nth-child(6) {
+    background: #F0541620;
+}
+main > .block-course .unit:nth-child(6) .number {
+    color: #F05416;
+}
+main > .block-course .unit:nth-child(6) .unit-dataset .unit-name {
+    color:#F05416;
+}
+main > .block-course .unit:nth-child(6) .unit-dataset .unit-topics ul a {
+    color: #F05416;
+    border-bottom: 1px solid #F0541620;
+}
+
+
+
+
+
+
+
+
+
+
 main > .block-course .unit:last-child {
     margin-bottom: 5vh;
 }

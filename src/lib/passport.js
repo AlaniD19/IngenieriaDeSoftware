@@ -34,7 +34,8 @@ passport.use('local.signup', new LocalStrategy({
     const newUser = {
         user_name : username,
         user_password : password,
-        user_email : signup_email
+        user_email : signup_email,
+        type_course: null
     };
     newUser.user_password = await helpers.encryptPassword(password);
 
@@ -45,7 +46,7 @@ passport.use('local.signup', new LocalStrategy({
     }else{
         const result = await pool.query('INSERT INTO user SET ? ', newUser);
         console.log(result);
-        newUser.id = result.insertId;
+        newUser.id_user = result.insertId;
         return done(null, newUser);
     }
 }));
