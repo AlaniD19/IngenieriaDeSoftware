@@ -54,122 +54,167 @@ router.get('/progress', isLoggedIn, (req, res) => {
 /* ROUTES FOR TOPIC UNIT */
 router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
     const {unit, topic} = req.params;
-    var viewTopic = {
-        user: req.user.id_user,
-        topic: null
-    }
     if (unit == 1){
         if (topic == 1){
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 1 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.render('topics/topic_1_Algebraicos.html'); }
             else {            
-            viewTopic.topic = 1;
-            await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,1]);
-            res.render('topics/topic_1_Algebraicos.html');
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,1]);
+                res.render('topics/topic_1_Algebraicos.html');
             }
         }
         else if (topic == 2){
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 2 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.render('topics/topic_1_Irracionales.html'); }
             else {            
-            viewTopic.topic = 2;
-            await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,2]);
-            res.render('topics/topic_1_Irracionales.html');
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,2]);
+                res.render('topics/topic_1_Irracionales.html');
             }
         }
         else if (topic == 3){
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 3 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.render('topics/topic_1_Trascendentes.html');}
             else {            
-            viewTopic.topic = 2;
-            await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,3]);
-            res.render('topics/topic_1_Trascendentes.html');
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,3]);
+                res.render('topics/topic_1_Trascendentes.html');
             }
         }
     }
     else if (unit == 2) {
         if (topic == 1){
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 4 AND user = ?', [req.user.id_user]);
-            if (topic_query.length > 0) { res.render('topics/topic_1_Algebraicos.html'); }
+            if (topic_query.length > 0) { res.render('topics/topic_2_QueEs.html'); }
             else {            
-            viewTopic.topic = 1;
-            await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,1]);
-            res.render('topics/topic_1_Algebraicos.html');
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,4]);
+                res.render('topics/topic_2_QueEs.html');
             }
         }
         else if (topic == 2){
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 5 AND user = ?', [req.user.id_user]);
-            if (topic_query.length > 0) { res.render('topics/topic_1_Irracionales.html'); }
+            if (topic_query.length > 0) { res.render('topics/topic_2_Ejemplos.html'); }
             else {            
-            viewTopic.topic = 2;
-            await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,2]);
-            res.render('topics/topic_1_Irracionales.html');
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,5]);
+                res.render('topics/topic_2_Ejemplos.html');
             }
         }
         else if (topic == 3){
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 6 AND user = ?', [req.user.id_user]);
-            if (topic_query.length > 0) { res.render('topics/topic_1_Trascendentes.html');}
+            if (topic_query.length > 0) { res.render('topics/topic_2_Ecuaciones2x2.html');}
             else {            
-            viewTopic.topic = 2;
-            await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,3]);
-            res.render('topics/topic_1_Trascendentes.html');
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,6]);
+                res.render('topics/topic_2_Ecuaciones2x2.html');
             }
         }
     }
     else if (unit == 3){}
     else if (unit == 4){}
-    else if (unit == 5){}
-    else if (unit == 6){}
+    else if (unit == 5){
+        if (topic == 1){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 14 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.render('topics/topic_5_Teorema.html'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,14]);
+                res.render('topics/topic_5_Torema.html');
+            }
+        }
+        else if (topic == 2){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 15 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.render('topics/topic_5_Distancia.html'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,15]);
+                res.render('topics/topic_5_Distancia.html');
+            }
+        }
+    }
+    else if (unit == 6){
+        if (topic == 1){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 16 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.render('topics/topic_6_Razones.html'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,16]);
+                res.render('topics/topic_6_Razones.html');
+            }
+        }
+        else if (topic == 2){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 17 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.render('topics/topic_6_Area.html'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,17]);
+                res.render('topics/topic_6_Area.html');
+            }
+        }
+        else if (topic == 3){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 18 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.render('topics/topic_6_Volumen.html'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,18]);
+                res.render('topics/topic_6_Volumen.html');
+            }
+        }
+        else if (topic == 4){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 19 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.render('topics/topic_6_Transformaciones.html'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,19]);
+                res.render('topics/topic_6_Transformaciones.html');
+            }
+        }
+    }
     else { res.redirect('/course');}
-
 });
 
 /* ROUTES FOR EXAM UNIT */
 router.get('/exam/:unit', isLoggedIn, async (req, res) => {
-    const unit = req.params;
-    var validatedTopics = await pool.query('SELECT count(id_user_topic) FROM user_topic WHERE user = ?', [req.user.id_user]);
+    const {unit} = req.params;
+    console.log(unit);
+    var validatedTopics = await pool.query('SELECT id_user_topic FROM user_topic WHERE user = ?', [req.user.id_user]);
     if (unit == 1) {
-        if (validatedTopics == 3) res.render('exam/quiz1.html');
+        if (validatedTopics.length >= 3) {res.redirect('/exam1');}
         else {
-            req.flash('message', 'Debes terminar de estudiar todos los temas del la unidad 1 antes de aplicar el examen campeón');
-            res.render('/course');
+            req.flash('message', 'Debes terminar de estudiar todos los temas de la unidad 1 antes de aplicar el examen campeón');
+            res.redirect('/course');
         }
     }
     else if (unit == 2) {
-        if (validatedTopics == 6) res.render('exam/quiz2.html');
+        if (validatedTopics.length >= 6) {res.render('exam/quiz2.html');}
         else {
-            req.flash('message', 'Debes terminar de estudiar todos los temas del la unidad 2 antes de aplicar el examen campeón');
-            res.render('/course');
+            req.flash('message', 'Debes terminar de estudiar todos los temas de la unidad 2 antes de aplicar el examen campeón');
+            res.redirect('/course');
         }
     }
     else if (unit == 3) {
-        if (validatedTopics == 11) res.render('exam/quiz3.html');
+        if (validatedTopics.length >= 11) {res.render('exam/quiz3.html');}
         else {
-            req.flash('message', 'Debes terminar de estudiar todos los temas del la unidad 3 antes de aplicar el examen campeón');
-            res.render('/course');
+            req.flash('message', 'Debes terminar de estudiar todos los temas de la unidad 3 antes de aplicar el examen campeón');
+            res.redirect('/course');
         }
     }
     else if (unit == 4) {
-        if (validatedTopics == 13) res.render('exam/quiz4.html');
+        if (validatedTopics.length >= 13) {res.render('exam/quiz4.html');}
         else {
-            req.flash('message', 'Debes terminar de estudiar todos los temas del la unidad 4 antes de aplicar el examen campeón');
-            res.render('/course');
+            req.flash('message', 'Debes terminar de estudiar todos los temas de la unidad 4 antes de aplicar el examen campeón');
+            res.redirect('/course');
         }
     }
     else if (unit == 5) {
-        if (validatedTopics == 15) res.render('exam/quiz5.html');
+        if (validatedTopics.length >= 15) res.render('exam/quiz5.html');
         else {
-            req.flash('message', 'Debes terminar de estudiar todos los temas del la unidad 5 antes de aplicar el examen campeón');
-            res.render('/course');
+            req.flash('message', 'Debes terminar de estudiar todos los temas de la unidad 5 antes de aplicar el examen campeón');
+            res.redirect('/course');
         }
     }
     else if (unit == 6) {
-        if (validatedTopics == 19) res.render('exam/quiz6.html');
+        if (validatedTopics.length >= 19) res.render('exam/quiz6.html');
         else {
-            req.flash('message', 'Debes terminar de estudiar todos los temas del la unidad 6 antes de aplicar el examen campeón');
-            res.render('/course');
+            req.flash('message', 'Debes terminar de estudiar todos los temas de la unidad 6 antes de aplicar el examen campeón');
+            res.redirect('/course');
         }
     }
+    else { res.redirect('/course'); }
+});
+
+router.get('/exam1', isLoggedIn, (req, res) => {
+    res.render('exam/quiz1.html');
 });
 
 module.exports = router;  

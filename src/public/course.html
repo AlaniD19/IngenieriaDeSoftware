@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="css/course.css">
 </head>
 <body>
+    <!-- MESSAGES -->
+    <% if (message) {%>
+        <input type="hidden" id="flash-msg" value="<%=message%>">
+    <%}%>
+
     <!-- MENU -->
     <nav class="menu">
         <div class="logo">
@@ -210,5 +215,6 @@
     </main>
 
     <script src="js/profile_img.js"></script>
+    <script src="js/course.js"></script>
 </body>
 </html>

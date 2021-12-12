@@ -9,6 +9,11 @@
     <title>Mathebasics | Inicio</title>
 </head>
 <body>
+    <!-- MESSAGES -->
+    <% if (message) {%>
+      <input type="hidden" id="flash-msg" value="<%=message%>">
+    <%}%>
+
     <!-- HEROIMAGE -->
     <section class="img-index">
         <div>
@@ -16,9 +21,6 @@
             <img src="img/iPad.png" alt="">
             <img src="img/Folder.png" alt="">
         </div>
-        <% if (message) {%> 
-          <div class="message"><%= message %></div>
-        <% } %>
     </section>
 
     <section class="forms-section">
@@ -73,14 +75,6 @@
       </section>
 
     <!-- TABS -->
-      <script>
-        const switchers = [...document.querySelectorAll('.switcher')]
-        switchers.forEach(item => {
-	        item.addEventListener('click', function() {
-		    switchers.forEach(item => item.parentElement.classList.remove('is-active'))
-		    this.parentElement.classList.add('is-active')
-	        })
-        })
-      </script>
+      <script src="js/index.js"></script>
 </body>
 </html>
