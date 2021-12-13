@@ -28,6 +28,8 @@ let questions = [
         question: "El conjunto de los números naturales es contable, y se pueden ordenar los números algebraicos en una correspondencia 1 a 1 con números enteros, por lo que también son contables.",
         choice1:"Verdadero",
         choice2:"Falso",
+        choice3:"",
+        choice4:"",
         answer:1,
     },
     {
@@ -42,6 +44,8 @@ let questions = [
         question: "Todas las raices son irracionales",
         choice1:"Verdadero",
         choice2:"Falso",
+        choice3:"",
+        choice4:"",
         answer:2,
     },
     {
@@ -80,6 +84,8 @@ let questions = [
         question: "Los número trascendentes deben ser numerables.",
         choice1: "Verdadero",
         choice2: "Falso",
+        choice3:"",
+        choice4:"",
         answer: 2,
     }
 ];
@@ -149,6 +155,11 @@ incrementScore = num => {
 
 reset.addEventListener('click', () => {
     window.location.reload();
-})
+});
+
+register.addEventListener('click', () => {
+    document.getElementById('input-score').value = score;
+    document.getElementById('form-score').submit();
+});
 
 startGame();

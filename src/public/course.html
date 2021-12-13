@@ -12,9 +12,9 @@
 </head>
 <body>
     <!-- MESSAGES -->
-    <% if (message) {%>
+    <% if (message) { %>
         <input type="hidden" id="flash-msg" value="<%=message%>">
-    <%}%>
+    <% } %>
 
     <!-- MENU -->
     <nav class="menu">
@@ -82,135 +82,151 @@
                     </div>
                 </div>
             </div>
-            <div class="unit">
-                <div class="number">2</div>
-                <div class="unit-dataset">
-                    <h2 class="unit-name">Álgebra: ecuaciones lineales</h2>
-                    <div class="unit-topics">
-                        <ul>
-                            <a href="/3/2/1"><li>
-                                <p>¿Qué es una ecuación?, tipos y cómo se resuelven</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/2/2"><li>
-                                <p>Ejemplos de ecuaciones lineales</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/2/3"><li>
-                                <p>Formas de resolver un sistema de ecuaciones lineales de 2x2</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/exam/2"><li>
-                                Presentar examen <i class="icon icon-chevron-right"></i>
-                            </li></a>
-                        </ul>
+            
+            <% if (unit > 1) { %>
+                <div class="unit">
+                    <div class="number">2</div>
+                    <div class="unit-dataset">
+                        <h2 class="unit-name">Álgebra: ecuaciones lineales</h2>
+                        <div class="unit-topics">
+                            <ul>
+                                <a href="/3/2/1"><li>
+                                    <p>¿Qué es una ecuación?, tipos y cómo se resuelven</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/2/2"><li>
+                                    <p>Ejemplos de ecuaciones lineales</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/2/3"><li>
+                                    <p>Formas de resolver un sistema de ecuaciones lineales de 2x2</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/exam/2"><li>
+                                    Presentar examen <i class="icon icon-chevron-right"></i>
+                                </li></a>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-              <div class="unit">
-                <div class="number">3</div>
-                <div class="unit-dataset">
-                    <h2 class="unit-name">Álgebra: binomios, desigualdades, ecuaciones y función cuadrática</h2>
-                    <div class="unit-topics">
-                        <ul>
-                            <a href="/3/3/1"><li>
-                                <p>Binomios</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/3/2"><li>
-                                <p>Binomio de Newton</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/3/3"><li>
-                                <p>Desigualdades</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/3/4"><li>
-                                <p>Ecuaciones</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/3/5"><li>
-                                <p>Función cuadrática</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/exam/3"><li>
-                                Presentar examen <i class="icon icon-chevron-right"></i>
-                            </li></a>
-                        </ul>
+            <% } %>
+            
+            <% if (unit > 2) { %>
+                <div class="unit">
+                    <div class="number">3</div>
+                    <div class="unit-dataset">
+                        <h2 class="unit-name">Álgebra: binomios, desigualdades, ecuaciones y función cuadrática</h2>
+                        <div class="unit-topics">
+                            <ul>
+                                <a href="/3/3/1"><li>
+                                    <p>Binomios</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/3/2"><li>
+                                    <p>Binomio de Newton</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/3/3"><li>
+                                    <p>Desigualdades</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/3/4"><li>
+                                    <p>Ecuaciones</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/3/5"><li>
+                                    <p>Función cuadrática</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/exam/3"><li>
+                                    Presentar examen <i class="icon icon-chevron-right"></i>
+                                </li></a>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-              <div class="unit">
-                <div class="number">4</div>
-                <div class="unit-dataset">
-                    <h2 class="unit-name">Geometría: congruencia y semejanza de triángulos</h2>
-                    <div class="unit-topics">
-                        <ul>
-                            <a href="/3/4/1"><li>
-                                <p>Congruencia de Triángulos</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/4/2"><li>
-                                <p>Semejanza de Triángulos</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/exam/4"><li>
-                                Presentar examen <i class="icon icon-chevron-right"></i>
-                            </li></a>
-                        </ul>
+            <% } %>
+
+            <% if (unit > 3) { %>
+                <div class="unit">
+                    <div class="number">4</div>
+                    <div class="unit-dataset">
+                        <h2 class="unit-name">Geometría: congruencia y semejanza de triángulos</h2>
+                        <div class="unit-topics">
+                            <ul>
+                                <a href="/3/4/1"><li>
+                                    <p>Congruencia de Triángulos</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/4/2"><li>
+                                    <p>Semejanza de Triángulos</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/exam/4"><li>
+                                    Presentar examen <i class="icon icon-chevron-right"></i>
+                                </li></a>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-              <div class="unit">
-                <div class="number">5</div>
-                <div class="unit-dataset">
-                    <h2 class="unit-name">Geometría: Teorema de Pitágoras y distancia entre dos puntos</h2>
-                    <div class="unit-topics">
-                        <ul>
-                            <a href="/3/5/1"><li>
-                                <p>Teorema de Pitágoras</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/5/2"><li>
-                                <p>Distancia entre dos puntos</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/exam/5"><li>
-                                Presentar examen <i class="icon icon-chevron-right"></i>
-                            </li></a>
-                        </ul>
+            <% } %>
+
+            <% if (unit > 4) { %>
+                <div class="unit">
+                    <div class="number">5</div>
+                    <div class="unit-dataset">
+                        <h2 class="unit-name">Geometría: Teorema de Pitágoras y distancia entre dos puntos</h2>
+                        <div class="unit-topics">
+                            <ul>
+                                <a href="/3/5/1"><li>
+                                    <p>Teorema de Pitágoras</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/5/2"><li>
+                                    <p>Distancia entre dos puntos</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/exam/5"><li>
+                                    Presentar examen <i class="icon icon-chevron-right"></i>
+                                </li></a>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-              <div class="unit">
-                <div class="number">6</div>
-                <div class="unit-dataset">
-                    <h2 class="unit-name">Geometría: razones trigonométricas, área y volumen y transformaciones</h2>
-                    <div class="unit-topics">
-                        <ul>
-                            <a href="/3/6/1"><li>
-                                <p>Razones trigonométricas</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/6/2"><li>
-                                <p>Área</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/6/3"><li>
-                                <p>Volumen</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/3/6/4"><li>
-                                <p>Transformaciones</p>
-                                <i class="icon icon-flag"></i>
-                            </li></a>
-                            <a href="/exam/6"><li>
-                                Presentar examen <i class="icon icon-chevron-right"></i>
-                            </li></a>
-                        </ul>
+            <% } %>
+            
+            <% if (unit > 5) { %>
+                <div class="unit">
+                    <div class="number">6</div>
+                    <div class="unit-dataset">
+                        <h2 class="unit-name">Geometría: razones trigonométricas, área y volumen y transformaciones</h2>
+                        <div class="unit-topics">
+                            <ul>
+                                <a href="/3/6/1"><li>
+                                    <p>Razones trigonométricas</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/6/2"><li>
+                                    <p>Área</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/6/3"><li>
+                                    <p>Volumen</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/3/6/4"><li>
+                                    <p>Transformaciones</p>
+                                    <i class="icon icon-flag"></i>
+                                </li></a>
+                                <a href="/exam/6"><li>
+                                    Presentar examen <i class="icon icon-chevron-right"></i>
+                                </li></a>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% } %>
+
         </div>
     </main>
 

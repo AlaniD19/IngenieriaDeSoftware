@@ -165,4 +165,9 @@ reset.addEventListener('click', () => {
     window.location.reload();
 })
 
+register.addEventListener('click', () => {
+    document.getElementById('input-score').value = score;
+    document.getElementById('form-score').submit();
+});
+
 startGame();

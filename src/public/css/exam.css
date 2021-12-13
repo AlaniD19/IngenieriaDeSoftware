@@ -147,14 +147,14 @@ main > .container .choice-grid .choice-container .choice-text {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3% 2%;
+    padding: 3% 1.5vw;
     min-height: 15vh;
     font-size: 1vw;
     color: var(--blue5);
 }
 main > .container .footer {
-    position: relative;
-    bottom: 0;
+    position: inherit;
+    top: 14%;
     padding: 1% 5%;
     width: 100%;
     background: rgba(0, 0, 0, 0.1);
