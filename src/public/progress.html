@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Mathebasics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/progress.css">
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="menu">
+        <div class="logo">
+            <p>M</p>
+            <p>b</p>
+            <span>v1.0</span>
+        </div>
+        <a href="/profile" class="user_p">
+            <div class="user_profile">
+                <img src="img/avatar_6.png" alt="avatar" id="avatar">
+                <p><%=user.user_name %></p>
+                <i class="icon icon-chevron-right"></i>
+            </div>
+        </a>
+        <ul class="options">
+            <li>
+                <a href="/dashboard">
+                    <i class="icon icon-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/progress">
+                    <i class="icon icon-pie-chart"></i>
+                    <span>Progreso</span>
+                </a>
+            </li>
+        </ul>
+        <a href="/logout" class="logout_buttom">
+            <i class="icon icon-log-out"></i>
+            <span>Cerrar sesión</span>
+        </a>
+    </nav>
+
+    <!-- DATA DISPLAY -->
+    <main class="content">
+        <div class="tittle">
+            <img src="img/chart-clay.png" alt="chart">
+            <h1>Progreso</h1>
+        </div>
+        <div class="display">
+            <div class="info">
+                <p class="grade">Tercer grado</p>
+                <p class="sub">C&nbsp;u&nbsp;r&nbsp;s&nbsp;o</p>
+
+                <p class="grade">
+                    <% if (user.type_course === 0) { %>
+                        <%='Guiado'%>
+                    <%} else {%>
+                        <%='Libre'%>
+                    <%}%>
+                </p>
+                <p class="sub">A&nbsp;c&nbsp;c&nbsp;e&nbsp;s&nbsp;o</p>
+            </div>
+            <div class="data">
+                <div class="exams">
+                    <ul>
+                        <li>
+                            <p class="name">UNIDAD TEMÁTCA</p>
+                            <p class="score">CALIFICACIÓN</p>
+                            <i class="icon icon-info"></i>
+                        </li>
+                        <li>
+                            <p class="name">Unidad 1</p>
+                            <p class="score"><%=progress1.unit1Score%></p>
+                            <% if (progress1.unit1Passed == 1) { %>
+                                <i class="icon icon-check"></i>
+                            <% } %>
+                        </li>
+                        <li>
+                            <p class="name">Unidad 2</p>
+                            <p class="score"><%=progress2.unit2Score%></p>
+                            <% if (progress2.unit2Unlock == 1) { %>
+                                <% if (progress2.unit2Passed == 1) { %>
+                                    <i class="icon icon-check"></i>
+                                <% } %>
+                            <% } else { %>
+                                <i class="icon icon-lock"></i>
+                            <% } %>
+                        </li>
+                        <li>
+                            <p class="name">Unidad 3</p>
+                            <p class="score"><%=progress3.unit3Score%></p>
+                            <% if (progress3.unit3Unlock == 1) { %>
+                                <% if (progress3.unit3Passed == 1) { %>
+                                    <i class="icon icon-check"></i>
+                                <% } %>
+                            <% } else { %>
+                                <i class="icon icon-lock"></i>
+                            <% } %>
+                        </li>
+                        <li>
+                            <p class="name">Unidad 4</p>
+                            <p class="score"><%=progress4.unit4Score%></p>
+                            <% if (progress4.unit4Unlock == 1) { %>
+                                <% if (progress4.unit4Passed == 1) { %>
+                                    <i class="icon icon-check"></i>
+                                <% } %>
+                            <% } else { %>
+                                <i class="icon icon-lock"></i>
+                            <% } %>
+                        </li>
+                        <li>
+                            <p class="name">Unidad 5</p>
+                            <p class="score"><%=progress5.unit5Score%></p>
+                            <% if (progress5.unit5Unlock == 1) { %>
+                                <% if (progress5.unit5Passed == 1) { %>
+                                    <i class="icon icon-check"></i>
+                                <% } %>
+                            <% } else { %>
+                                <i class="icon icon-lock"></i>
+                            <% } %>
+                        </li>
+                        <li>
+                            <p class="name">Unidad 6</p>
+                            <p class="score"><%=progress6.unit6Score%></p>
+                            <% if (progress6.unit6Unlock == 1) { %>
+                                <% if (progress6.unit6Passed == 1) { %>
+                                    <i class="icon icon-check"></i>
+                                <% } %>
+                            <% } else { %>
+                                <i class="icon icon-lock"></i>
+                            <% } %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/profile_img.js"></script>
+</body>
+</html>

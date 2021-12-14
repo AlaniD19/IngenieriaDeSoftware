@@ -104,7 +104,6 @@ router.post('/registerScore/:exam', isLoggedIn, async (req, res) => {
     }
 });
 
-
 /* ROUTE FOR HTML PAGES */
 router.get('/profile', isLoggedIn, (req, res) => {
     res.render('profile.html');
@@ -120,26 +119,80 @@ router.get('/course', isLoggedIn, async (req, res) => {
             unit += 1;
         }
     }
-    console.log(unit);
     res.render('course.html', {unit: unit})
-    /*
-    if (examPassed.length > 0) {
-        if (examPassed[0].passed == 1) {
-            if(examPassed[1].passed == 1 && examPassed.length > 1) {
-                if(examPassed[2].passed == 1) {
-                    if(examPassed[3].passed == 1) {
-                        if(examPassed[4].passed == 1) {
-                            if(examPassed[5].passed == 1) { res.render('course.html', {unit:6});
-                            } else { res.render('course.html', {unit:5}); }
-                        } else { res.render('course.html', {unit:4}); }
-                    } else { res.render('course.html', {unit:3}); }
-                } else { res.render('course.html', {unit:2}); }
-            } else { res.render('course.html', {unit:1}); }
-        } else { res.render('course.html', {unit:0}); }
-    } else { res.render('course.html', {unit:0}); } */
 });
-router.get('/progress', isLoggedIn, (req, res) => {
-    res.render('progress.html');
+router.get('/progress', isLoggedIn, async (req, res) => {
+    examPassed = await pool.query('SELECT * FROM user_exam WHERE user = ?', [req.user.id_user]);
+    var progress1 = {
+        unit1Score:     '-',
+        unit1Passed:    '-'
+    };
+    var progress2 = {
+        unit2Score:     '-',
+        unit2Unlock:    '-',
+        unit2Passed:    '-'
+    };
+    var progress3 = {
+        unit3Score:     '-',
+        unit3Unlock:    '-',
+        unit3Passed:    '-'
+    };
+    var progress4 = {
+        unit4Score:     '-',
+        unit4Unlock:    '-',
+        unit4Passed:    '-'
+    };
+    var progress5 = {
+        unit5Score:     '-',
+        unit5Unlock:    '-',
+        unit5Passed:    '-'
+    };
+    var progress6 = {
+        unit6Score:     '-',
+        unit6Unlock:    '-',
+        unit6Passed:    '-'
+    };
+
+    if (examPassed.length == 0) {
+        res.render('progress.html', {progress1,progress2,progress3,progress4,progress5,progress6});
+    }
+    var unit = 0; 
+    for (var i=0 ; i<examPassed.length ; i++) {
+        if ( examPassed[i].passed == 1 ) {
+            unit += 1;
+        }
+    }
+
+    if (unit >= 1) {
+        progress1.unit1Score = examPassed[0].score;
+        progress1.unit1Passed = examPassed[0].passed;
+        if (progress1.unit1Passed == 1) { progress2.unit2Unlock = 1 }
+    }
+    if (unit >= 2) {
+        progress2.unit2Score    = examPassed[1].score;
+        progress2.unit2Passed   = examPassed[1].passed;
+        if (progress2.unit2Passed == 1) { progress3.unit3Unlock = 1 }
+    }
+    if (unit >= 3) {
+        progress3.unit3Score    = examPassed[2].score;
+        progress3.unit3Passed   = examPassed[2].passed;
+        if (progress3.unit3Passed == 1) { progress4.unit4Unlock = 1 }
+    }
+    if (unit >= 4) {
+        progress4.unit4Score    = examPassed[3].score;
+        progress4.unit4Passed   = examPassed[3].passed;
+        if (progress4.unit4Passed == 1) { progress5.unit5Unlock = 1 }
+    }
+    if (unit >= 5) {
+        progress5.unit5Score    = examPassed[4].score;
+        progress5.unit5Passed   = examPassed[4].passed;
+        if (progress5.unit5Passed == 1) { progress6.unit6Unlock = 1 }
+    }
+    if (unit >= 6) {
+        progress6.unit6Score    = examPassed[5].score;
+        progress6.unit6Passed   = examPassed[5].passed;
+    }
+    res.render('progress.html', {progress1,progress2,progress3,progress4,progress5,progress6});
 });
 
 /* ROUTES FOR TOPIC UNIT */
@@ -197,8 +250,66 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             }
         }
     }
-    else if (unit == 3){}
-    else if (unit == 4){}
+    else if (unit == 3){
+        if (topic == 1){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 7 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.redirect('/topic7'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,7]);
+                res.redirect('topic7');
+            }
+        }
+        else if (topic == 2){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 8 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.redirect('/topic8'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,8]);
+                res.redirect('topic8');
+            }
+        }
+        else if (topic == 3){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 9 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.redirect('/topic9'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,9]);
+                res.redirect('topic9');
+            }
+        }
+        else if (topic == 4){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 10 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.redirect('/topic10'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,10]);
+                res.redirect('topic10');
+            }
+        }
+        else if (topic == 5){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 11 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.redirect('/topic11'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,11]);
+                res.redirect('topic11');
+            }
+        }
+    }
+    else if (unit == 4){
+        if (topic == 1){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 12 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.redirect('/topic12'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,12]);
+                res.redirect('topic12');
+            }
+        }
+        else if (topic == 2){
+            topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 13 AND user = ?', [req.user.id_user]);
+            if (topic_query.length > 0) { res.redirect('/topic13'); }
+            else {            
+                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,13]);
+                res.redirect('topic13');
+            }
+        }
+    }
     else if (unit == 5){
         if (topic == 1){
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 14 AND user = ?', [req.user.id_user]);
@@ -272,25 +383,25 @@ router.get('/topic6', isLoggedIn, (req, res) => {
     res.render('topic_2_Ecuaciones2x2.html');
 });
 router.get('/topic7', isLoggedIn, (req, res) => {
-    
+    res.render('topic_3_Binomio.html');
 });
 router.get('/topic8', isLoggedIn, (req, res) => {
-    
+    res.render('topic_3_BinomioNewton.html');
 });
 router.get('/topic9', isLoggedIn, (req, res) => {
-    
+    res.render('topic_3_Desigualdad.html');
 });
 router.get('/topic10', isLoggedIn, (req, res) => {
-    
+    res.render('topic_3_Ecuaciones.html');
 });
 router.get('/topic11', isLoggedIn, (req, res) => {
-    
+    res.render('topic_3_FuncionCuadratica.html');
 });
 router.get('/topic12', isLoggedIn, (req, res) => {
-    
+    res.render('topic_4_Congruencia.html');
 });
 router.get('/topic13', isLoggedIn, (req, res) => {
-    
+    res.render('topic_4_Semejanza.html');
 });
 router.get('/topic14', isLoggedIn, (req, res) => {
     res.render('topic_5_Teorema.html');

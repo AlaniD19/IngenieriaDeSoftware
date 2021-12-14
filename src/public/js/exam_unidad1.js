@@ -87,6 +87,14 @@ let questions = [
         choice3:"",
         choice4:"",
         answer: 2,
+    },
+    {
+        question:"¿Qué tipo de número es π",
+        choice1: "Racional",
+        choice2: "Irracional",
+        choice3: "Algebraico",
+        choice4: "Ninguna de las anteriores",
+        answer: 2,
     }
 ];
 

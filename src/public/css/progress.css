@@ -1,0 +1,120 @@
+main > .tittle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: var(--blue5);
+    padding: 2% 5%;
+}
+main > .tittle img {
+    width: 8%;
+}
+main > .tittle h1 {
+    display: block;
+    width: 92%;
+    padding-left: 2vw;
+    color: white;
+    font-size: 2.5vw;
+    font-weight: 100;
+}
+main > .display {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+main > .display .info {
+    display: block;
+    width: 50%;
+    padding-top: 15%;
+}
+main > .display .info .grade {
+    text-align: center;
+    color: var(--blue3);
+    font-size: 2vw;
+}
+main > .display .info .sub {
+    text-align: center;
+    color: var(--blue5);
+    font-size: 0.75vw;
+    text-transform: uppercase;
+    margin-bottom: 5vh;
+}
+main > .display .data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 5% 0;
+}
+main > .display .data .exams {
+    display: block;
+    width: 70%;
+}
+main > .display .data .exams ul {
+    list-style: none;
+    display: block;
+    width: 100%;
+}
+main > .display .data .exams ul li {
+    display: flex;
+    margin-bottom: 1vh;
+    padding: 2.5vh 1vw;
+    width: 100%;
+    border-radius: 1vw;
+    color: var(--blue2);
+    background: rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+main > .display .data .exams ul li:first-child {
+    border-radius: 0;
+    color: var(--blue2);
+    font-size: 0.75vw;
+    margin-bottom: 0;
+    background: transparent;
+}
+main > .display .data .exams ul li:first-child i {
+    font-size: 1vw;
+}
+
+main > .display .data .exams ul li:last-child {
+    margin-bottom: 0;
+}
+main > .display .data .exams ul li .name {
+    display: block;
+    width: 50%;
+    font-size: 0.85vw;
+}
+main > .display .data .exams ul li .score {
+    display: block;
+    text-align: center;
+    width: 25%;
+    font-family: Klavika-Bold;
+}
+main > .display .data .exams ul li i {
+    display: block;
+    text-align: center;
+    width: 25%;
+}
+main > .display .data .exams ul li:nth-child(2):hover {
+    background: #597ba030;
+    color: #597ba0;
+}
+main > .display .data .exams ul li:nth-child(3):hover {
+    background: #11AC8330;
+    color: #11AC83;
+}
+main > .display .data .exams ul li:nth-child(4):hover {
+    background: #F0325B30;
+    color: #F0325B;
+}
+main > .display .data .exams ul li:nth-child(5):hover {
+    background: #EEAF7830;
+    color: #EEAF78;
+}
+main > .display .data .exams ul li:nth-child(6):hover {
+    background: #00D0FF30;
+    color: #00D0FF;
+}
+main > .display .data .exams ul li:nth-child(7):hover {
+    background: #F0541630;
+    color: #F05416;
+}
