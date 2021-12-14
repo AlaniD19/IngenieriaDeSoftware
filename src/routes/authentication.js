@@ -157,8 +157,9 @@ router.get('/progress', isLoggedIn, async (req, res) => {
         res.render('progress.html', {progress1,progress2,progress3,progress4,progress5,progress6});
     }
     var unit = 0; 
+    var tries = 0;
     for (var i=0 ; i<examPassed.length ; i++) {
-        if ( examPassed[i].passed == 1 ) {
+        if ( examPassed[i].passed == 1 || examPassed[i].passed == 0) {
             unit += 1;
         }
     }
@@ -368,10 +369,10 @@ router.get('/topic1', isLoggedIn, (req, res) => {
     res.render('topic_1_Algebraicos.html');
 });
 router.get('/topic2', isLoggedIn, (req, res) => {
-    res.render('topic_1_Irracionales.html');
+    res.render('topic_1_Trascendentes.html');
 });
 router.get('/topic3', isLoggedIn, (req, res) => {
-    res.render('topic_1_Trascendentes.html');
+    res.render('topic_1_Irracionales.html');
 });
 router.get('/topic4', isLoggedIn, (req, res) => {
     res.render('topic_2_QueEs.html');
@@ -486,7 +487,7 @@ router.get('/exam4', isLoggedIn, (req, res) => {
 router.get('/exam5', isLoggedIn, (req, res) => {
     res.render('quiz5.html');
 });
-router.get('/exam5', isLoggedIn, (req, res) => {
+router.get('/exam6', isLoggedIn, (req, res) => {
     res.render('quiz6.html');
 });
 
