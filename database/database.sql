@@ -33,8 +33,8 @@ CREATE TABLE unit (
     PRIMARY KEY (id_unit)
 );
 
-INSERT INTO unit VALUES ('','1'), ('','2'), ('','3'),
-                        ('','4'), ('','5'), ('','6');
+INSERT INTO unit (unit_name) VALUES ('1'), ('2'), ('3'),
+                        ('4'), ('5'), ('6');
 
 DROP TABLE IF EXISTS topic;
 CREATE TABLE topic (
@@ -45,12 +45,12 @@ CREATE TABLE topic (
     CONSTRAINT FOREIGN KEY (unit) REFERENCES unit(id_unit) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO topic VALUES ('','1','1'), ('','2','1'), ('','3','1'),
-                        ('','1','2'), ('','2','2'), ('','3','2'),
-                        ('','1','3'), ('','2','3'), ('','3','3'), ('','4','3'), ('','5','3'),
-                        ('','1','4'), ('','2','4'),
-                        ('','1','5'), ('','2','5'),
-                        ('','1','6'), ('','2','6'), ('','3','6'), ('','4','6');
+INSERT INTO topic (topic_name, unit) VALUES ('1','1'), ('2','1'), ('3','1'),
+                        ('1','2'), ('2','2'), ('3','2'),
+                        ('1','3'), ('2','3'), ('3','3'), ('4','3'), ('5','3'),
+                        ('1','4'), ('2','4'),
+                        ('1','5'), ('2','5'),
+                        ('1','6'), ('2','6'), ('3','6'), ('4','6');
 
 DROP TABLE IF EXISTS exam;
 CREATE TABLE exam (
@@ -60,8 +60,8 @@ CREATE TABLE exam (
     CONSTRAINT FOREIGN KEY (unit) REFERENCES unit(id_unit) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO exam VALUES ('','1'), ('','2'), ('','3'),
-                        ('','4'), ('','5'), ('','6');
+INSERT INTO exam (unit) VALUES ('1'), ('2'), ('3'),
+                        ('4'), ('5'), ('6');
 
 DROP TABLE IF EXISTS user_exam;
 CREATE TABLE user_exam (

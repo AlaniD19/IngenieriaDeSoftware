@@ -31,32 +31,32 @@ router.post('/registerTypeCourse', isLoggedIn, async (req, res) => {
     if (type == 0) { res.redirect('/dashboard'); }
     else {
         /* EXAM REGISTER */
-        await pool.query("INSERT INTO user_exam VALUES ('',?,1,0,1)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_exam VALUES ('',?,2,0,1)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_exam VALUES ('',?,3,0,1)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_exam VALUES ('',?,4,0,1)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_exam VALUES ('',?,5,0,1)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_exam VALUES ('',?,6,0,1)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_exam (user,exam,score,passed) VALUES (?,1,0,1)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_exam (user,exam,score,passed) VALUES (?,2,0,1)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_exam (user,exam,score,passed) VALUES (?,3,0,1)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_exam (user,exam,score,passed) VALUES (?,4,0,1)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_exam (user,exam,score,passed) VALUES (?,5,0,1)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_exam (user,exam,score,passed) VALUES (?,6,0,1)", [req.user.id_user]);
         /* TOPICS */
-        await pool.query("INSERT INTO user_topic VALUES ('',?,1)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,2)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,3)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,4)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,5)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,6)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,7)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,8)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,9)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,10)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,11)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,12)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,13)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,14)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,15)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,16)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,17)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,18)", [req.user.id_user]);
-        await pool.query("INSERT INTO user_topic VALUES ('',?,19)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,1)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,2)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,3)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,4)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,5)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,6)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,7)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,8)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,9)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,10)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,11)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,12)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,13)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,14)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,15)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,16)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,17)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,18)", [req.user.id_user]);
+        await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,19)", [req.user.id_user]);
         /* REDIREC */
         res.redirect('/dashboard');
     }
@@ -89,11 +89,11 @@ router.post('/registerScore/:exam', isLoggedIn, async (req, res) => {
             }
         } else {
             if (score >= 8) {
-                await pool.query("INSERT INTO user_exam VALUES ('',?,?,?,1)", [req.user.id_user,exam,score]);
+                await pool.query("INSERT INTO user_exam (user,exam,score,passed) VALUES (?,?,?,1)", [req.user.id_user,exam,score]);
                 req.flash('message', '¡Felicidades! Has aprobado la unidad, se desbloqueo la siguiente unidad, ¡A estudiar!');
                 res.redirect('/course');
             } else {
-                await pool.query("INSERT INTO user_exam VALUES ('',?,?,?,0)", [req.user.id_user,exam,score]);
+                await pool.query("INSERT INTO user_exam (user,exam,score,passed) VALUES (?,?,?,0)", [req.user.id_user,exam,score]);
                 req.flash('message', 'La calificación no es la esperada :c, ¿por qué no repasamos de nuevo las lecciones?');
                 res.redirect('/course');
             }
@@ -156,44 +156,46 @@ router.get('/progress', isLoggedIn, async (req, res) => {
     if (examPassed.length == 0) {
         res.render('progress.html', {progress1,progress2,progress3,progress4,progress5,progress6});
     }
-    var unit = 0; 
-    var tries = 0;
-    for (var i=0 ; i<examPassed.length ; i++) {
-        if ( examPassed[i].passed == 1 || examPassed[i].passed == 0) {
-            unit += 1;
+    else {
+        var unit = 0; 
+        var tries = 0;
+        for (var i=0 ; i<examPassed.length ; i++) {
+            if ( examPassed[i].passed == 1 || examPassed[i].passed == 0) {
+                unit += 1;
+            }
         }
-    }
 
-    if (unit >= 1) {
-        progress1.unit1Score = examPassed[0].score;
-        progress1.unit1Passed = examPassed[0].passed;
-        if (progress1.unit1Passed == 1) { progress2.unit2Unlock = 1 }
+        if (unit >= 1) {
+            progress1.unit1Score = examPassed[0].score;
+            progress1.unit1Passed = examPassed[0].passed;
+            if (progress1.unit1Passed == 1) { progress2.unit2Unlock = 1 }
+        }
+        if (unit >= 2) {
+            progress2.unit2Score    = examPassed[1].score;
+            progress2.unit2Passed   = examPassed[1].passed;
+            if (progress2.unit2Passed == 1) { progress3.unit3Unlock = 1 }
+        }
+        if (unit >= 3) {
+            progress3.unit3Score    = examPassed[2].score;
+            progress3.unit3Passed   = examPassed[2].passed;
+            if (progress3.unit3Passed == 1) { progress4.unit4Unlock = 1 }
+        }
+        if (unit >= 4) {
+            progress4.unit4Score    = examPassed[3].score;
+            progress4.unit4Passed   = examPassed[3].passed;
+            if (progress4.unit4Passed == 1) { progress5.unit5Unlock = 1 }
+        }
+        if (unit >= 5) {
+            progress5.unit5Score    = examPassed[4].score;
+            progress5.unit5Passed   = examPassed[4].passed;
+            if (progress5.unit5Passed == 1) { progress6.unit6Unlock = 1 }
+        }
+        if (unit >= 6) {
+            progress6.unit6Score    = examPassed[5].score;
+            progress6.unit6Passed   = examPassed[5].passed;
+        }
+        res.render('progress.html', {progress1,progress2,progress3,progress4,progress5,progress6});
     }
-    if (unit >= 2) {
-        progress2.unit2Score    = examPassed[1].score;
-        progress2.unit2Passed   = examPassed[1].passed;
-        if (progress2.unit2Passed == 1) { progress3.unit3Unlock = 1 }
-    }
-    if (unit >= 3) {
-        progress3.unit3Score    = examPassed[2].score;
-        progress3.unit3Passed   = examPassed[2].passed;
-        if (progress3.unit3Passed == 1) { progress4.unit4Unlock = 1 }
-    }
-    if (unit >= 4) {
-        progress4.unit4Score    = examPassed[3].score;
-        progress4.unit4Passed   = examPassed[3].passed;
-        if (progress4.unit4Passed == 1) { progress5.unit5Unlock = 1 }
-    }
-    if (unit >= 5) {
-        progress5.unit5Score    = examPassed[4].score;
-        progress5.unit5Passed   = examPassed[4].passed;
-        if (progress5.unit5Passed == 1) { progress6.unit6Unlock = 1 }
-    }
-    if (unit >= 6) {
-        progress6.unit6Score    = examPassed[5].score;
-        progress6.unit6Passed   = examPassed[5].passed;
-    }
-    res.render('progress.html', {progress1,progress2,progress3,progress4,progress5,progress6});
 });
 
 /* ROUTES FOR TOPIC UNIT */
@@ -204,7 +206,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 1 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic1'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,1]);
+                await pool.query("INSERT INTO user_topic (user,topic) VALUES (?,?)", [req.user.id_user,1]);
                 res.redirect('/topic1');
             }
         }
@@ -212,7 +214,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 2 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic2'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,2]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,2]);
                 res.redirect('/topic2');
             }
         }
@@ -220,7 +222,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 3 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic3'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,3]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,3]);
                 res.redirect('/topic3');
             }
         }
@@ -230,7 +232,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 4 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic4'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,4]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,4]);
                 res.redirect('topic4');
             }
         }
@@ -238,7 +240,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 5 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic5'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,5]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,5]);
                 res.redirect('/topic5');
             }
         }
@@ -246,7 +248,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 6 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic6'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,6]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,6]);
                 res.redirect('/topic6');
             }
         }
@@ -256,7 +258,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 7 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic7'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,7]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,7]);
                 res.redirect('topic7');
             }
         }
@@ -264,7 +266,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 8 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic8'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,8]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,8]);
                 res.redirect('topic8');
             }
         }
@@ -272,7 +274,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 9 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic9'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,9]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,9]);
                 res.redirect('topic9');
             }
         }
@@ -280,7 +282,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 10 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic10'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,10]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,10]);
                 res.redirect('topic10');
             }
         }
@@ -288,7 +290,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 11 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic11'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,11]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,11]);
                 res.redirect('topic11');
             }
         }
@@ -298,7 +300,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 12 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic12'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,12]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,12]);
                 res.redirect('topic12');
             }
         }
@@ -306,7 +308,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 13 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic13'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,13]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,13]);
                 res.redirect('topic13');
             }
         }
@@ -316,7 +318,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 14 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic14'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,14]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,14]);
                 res.redirect('/topic14');
             }
         }
@@ -324,7 +326,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 15 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic15'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,15]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,15]);
                 res.redirect('/topic15');
             }
         }
@@ -334,7 +336,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 16 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic16'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,16]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,16]);
                 res.redirect('/topic16');
             }
         }
@@ -342,7 +344,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 17 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic17'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,17]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,17]);
                 res.redirect('/topic17');
             }
         }
@@ -350,7 +352,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 18 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic18'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,18]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,18]);
                 res.redirect('/topic18');
             }
         }
@@ -358,7 +360,7 @@ router.get('/3/:unit/:topic', isLoggedIn, async (req, res) => {
             topic_query = await pool.query('SELECT id_user_topic FROM user_topic WHERE topic = 19 AND user = ?', [req.user.id_user]);
             if (topic_query.length > 0) { res.redirect('/topic19'); }
             else {            
-                await pool.query('INSERT INTO user_topic VALUES (?,?,?)', ['',req.user.id_user,19]);
+                await pool.query('INSERT INTO user_topic (user,topic) VALUES (?,?)', [req.user.id_user,19]);
                 res.redirect('/topic19');
             }
         }
